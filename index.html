@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Intelligence Room | United Growth &middot; Targeting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Fraunces:ital,opsz,wght@1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --asphalt:#0A0A0C;--concrete:#15151A;--court:#22222A;--bone:#F4F1EA;--chalk:#D8D4C8;
+  --navy:#0D2D5E;--navy-deep:#071A38;--blue:#1B9BD1;--blue-soft:#5BB8E0;
+  --canopy:#D4FF3D;--moss:#7BAA3E;--terracotta:#C4521F;--hazard:#FF5A1F;--clay:#FFB627;--jet-pink:#FF2D7A;
+  --bg:var(--asphalt);--surface:var(--concrete);--line:var(--court);--ink:var(--bone);--muted:#9a9788;--card:#15151A;
+  --canopy-text:#D4FF3D;--moss-text:#8Fc24e;--clay-text:#FFB627;--blue-text:#5BB8E0;--terra-text:#E0794A;--pink-text:#FF6FA3;
+  --panel-deep:#071A38;--panel-mid:#0D2D5E;
+  --barcanopy:#D4FF3D;--barblue:#1B9BD1;--barterra:#C4521F;--barclay:#FFB627;--barmoss:#7BAA3E;--barpink:#FF2D7A;--barnavy:#0D2D5E;
+}
+[data-theme="light"]{
+  --bg:#F4F1EA;--surface:#FBFAF6;--line:#E0DCCF;--ink:#161512;--muted:#6b6659;--card:#FFFFFF;--chalk:#4a463c;
+  --canopy-text:#5C7200;--moss-text:#4a7a20;--clay-text:#b07800;--blue-text:#0f6a92;--terra-text:#9c3d13;--pink-text:#c01458;
+}
+.dark-panel{--canopy-text:#D4FF3D;--blue-text:#5BB8E0;--moss-text:#8FC24E;}
+.dark-panel .btn.ghost{border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.75)}
+.dark-panel .btn.ghost:hover{border-color:rgba(255,255,255,.6);color:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.55;font-size:15px;-webkit-font-smoothing:antialiased;transition:background .2s,color .2s}
+.wrap{max-width:1120px;margin:0 auto;padding:0 26px}
+.mono{font-family:'JetBrains Mono',monospace}
+a{color:var(--blue-text);text-decoration:none}
+/* nav */
+nav.top{position:sticky;top:0;z-index:50;background:var(--panel-deep);border-bottom:1px solid rgba(255,255,255,.08)}
+nav.top .inner{max-width:1120px;margin:0 auto;padding:11px 26px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.brand{font-family:'JetBrains Mono';font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#F4F1EA;font-weight:700;white-space:nowrap}
+.brand .sep{color:rgba(216,212,200,.6);font-size:10px;font-weight:400;margin-left:8px;letter-spacing:.1em}
+.tabs{display:flex;gap:5px;flex-wrap:wrap;margin-left:6px}
+.tab{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.07em;text-transform:uppercase;color:rgba(216,212,200,.72);background:none;border:1px solid transparent;padding:7px 11px;border-radius:7px;cursor:pointer;transition:all .16s;white-space:nowrap}
+.tab:hover{color:#fff;border-color:rgba(255,255,255,.18)}
+.tab.active{color:var(--asphalt);background:var(--canopy);font-weight:700}
+.navright{margin-left:auto;display:flex;align-items:center;gap:9px}
+.nav-cta{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:8px 13px;border-radius:7px;background:var(--blue);color:#04121f;white-space:nowrap}
+.themeBtn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#F4F1EA;width:32px;height:32px;border-radius:7px;cursor:pointer;font-size:14px}
+/* views */
+.view{display:none;animation:fade .25s ease}
+.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+section.blk{padding:46px 0;border-bottom:1px solid var(--line)}
+section.blk:last-child{border-bottom:none}
+.secnum{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.24em;color:var(--pink-text);margin-bottom:11px}
+.kicker{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--pink-text);margin-bottom:14px}
+h1.big{font-family:'Archivo Black',sans-serif;font-size:clamp(32px,5.4vw,60px);line-height:.95;letter-spacing:-.02em;text-transform:uppercase}
+h1.big em{color:var(--canopy-text);font-style:italic;display:inline-block;transform:skewX(-5deg)}
+h2.sec{font-family:'Archivo Black',sans-serif;font-size:clamp(24px,3.4vw,38px);line-height:1;letter-spacing:-.02em;text-transform:uppercase}
+h2.sec em{color:var(--canopy-text);font-style:italic}
+h3.sub{font-family:'Archivo Black',sans-serif;font-size:19px;text-transform:uppercase;letter-spacing:-.01em;margin:34px 0 12px}
+h3.sub em{color:var(--canopy-text);font-style:italic}
+.lede{max-width:800px;margin-top:16px;color:var(--chalk);font-size:16.5px}
+.sub{max-width:840px;margin-top:12px;color:var(--chalk)}
+p.body{max-width:840px;margin:12px 0;color:var(--ink)}
+.metastrip{display:flex;gap:24px;flex-wrap:wrap;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:24px;padding-top:20px;border-top:1px solid var(--line)}
+/* cards */
+.card{background:var(--card);border:1px solid var(--line);border-radius:13px;padding:22px 24px;margin-bottom:15px}
+.card.tl{border-left:4px solid var(--canopy)}.card.tb{border-left:4px solid var(--blue)}.card.tt{border-left:4px solid var(--terracotta)}.card.tc{border-left:4px solid var(--clay)}.card.tm{border-left:4px solid var(--moss)}
+.card h4{font-family:'Archivo Black';font-size:18px;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:5px}
+.card .role{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
+.chhead{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:8px}
+.chhead .clabel{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.chhead .ctitle{font-family:'Archivo Black';font-size:18px;text-transform:uppercase;letter-spacing:-.01em}
+.chhead .ctags{margin-left:auto;font-family:'JetBrains Mono';font-size:10px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.grid2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+@media(max-width:820px){.grid3,.grid4,.grid2{grid-template-columns:1fr}}
+.tags{display:flex;flex-wrap:wrap;gap:7px;margin:11px 0}
+.tag{font-family:'JetBrains Mono';font-size:11.5px;background:rgba(0,0,0,.05);border:1px solid var(--line);color:var(--chalk);padding:4px 10px;border-radius:6px}
+[data-theme="dark"] .tag{background:rgba(255,255,255,.05)}
+.why{background:rgba(0,0,0,.04);border-left:3px solid var(--canopy);border-radius:0 8px 8px 0;padding:12px 15px;margin-top:13px;font-size:14px;color:var(--ink)}
+[data-theme="dark"] .why{background:rgba(212,255,61,.06)}
+.why b{color:var(--canopy-text)}
+.card.tt .why{border-left-color:var(--terracotta)}.card.tt .why b{color:var(--terra-text)}
+.card.tb .why{border-left-color:var(--blue)}.card.tb .why b{color:var(--blue-text)}
+.card.tc .why{border-left-color:var(--clay)}.card.tc .why b{color:var(--clay-text)}
+.card.tm .why{border-left-color:var(--moss)}.card.tm .why b{color:var(--moss-text)}
+.ev{font-size:13.5px;color:var(--muted);margin-top:10px}
+.ev b{color:var(--ink)}
+/* stat */
+.stat{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:16px 18px}
+.stat .n{font-family:'Archivo Black';font-size:30px;line-height:1;color:var(--canopy-text)}
+.stat .l{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-top:7px}
+/* badges */
+.badge{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;padding:3px 9px;border-radius:20px;font-weight:700;white-space:nowrap;display:inline-block}
+.bh{background:rgba(123,170,62,.18);color:var(--moss-text)}
+.bm{background:rgba(255,182,39,.16);color:var(--clay-text)}
+.bl{background:rgba(154,151,136,.16);color:var(--muted)}
+[data-theme="light"] .bh{color:#39601a}[data-theme="light"] .bm{color:#6b4a00}[data-theme="light"] .bl{color:#565143}
+.bstart{background:var(--canopy);color:var(--asphalt)}
+.bbuild{background:rgba(27,155,209,.18);color:var(--blue-text)}
+.blater{background:rgba(154,151,136,.16);color:var(--muted)}
+.pill{font-family:'JetBrains Mono';font-size:10px;letter-spacing:.06em;text-transform:uppercase;padding:3px 10px;border-radius:20px;background:rgba(0,0,0,.05);border:1px solid var(--line);color:var(--chalk)}
+[data-theme="dark"] .pill{background:rgba(255,255,255,.05)}
+/* callout */
+.callout{background:rgba(0,0,0,.03);border:1px solid var(--line);border-left:3px solid var(--canopy);border-radius:12px;padding:22px 24px;margin:24px 0}
+[data-theme="dark"] .callout{background:linear-gradient(135deg,rgba(212,255,61,.07),rgba(27,155,209,.05))}
+.callout.blue{border-left-color:var(--blue)}.callout.clay{border-left-color:var(--clay)}.callout.terra{border-left-color:var(--terracotta)}
+.callout .k{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--canopy-text);margin-bottom:9px}
+.callout.blue .k{color:var(--blue-text)}.callout.clay .k{color:var(--clay-text)}.callout.terra .k{color:var(--terra-text)}
+.callout p{color:var(--ink);font-size:14.5px}.callout b{color:var(--ink)}
+/* tables */
+.tbl{width:100%;border-collapse:collapse;margin-top:14px;font-size:13.5px}
+.tbl th{text-align:left;font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line)}
+.tbl td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--chalk)}
+.tbl td.k{color:var(--ink);font-weight:600}
+.scroll{overflow-x:auto}
+@media(max-width:760px){.scroll .tbl,.scroll .kw{min-width:640px}}
+/* filter table */
+.ftable{width:100%;border-collapse:collapse;margin-top:10px}
+.ftable td{padding:8px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13.5px}
+.ftable td.lbl{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);width:180px}
+.ftable td.val{color:var(--ink)}
+.ftable tr:last-child td{border-bottom:none}
+/* keyword */
+.kw{width:100%;border-collapse:collapse;margin-top:14px;font-size:13.5px}
+.kw th{text-align:left;font-family:'JetBrains Mono';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding:10px 12px;border-bottom:1px solid var(--line)}
+.kw td{padding:9px 12px;border-bottom:1px solid var(--line);vertical-align:top;color:var(--chalk)}
+.kw td.term{color:var(--ink);font-family:'JetBrains Mono';font-size:12px}
+/* tierlabel */
+.tierlabel{display:flex;align-items:center;gap:10px;font-family:'JetBrains Mono';font-size:12px;letter-spacing:.12em;text-transform:uppercase;margin:30px 0 14px;font-weight:700}
+.tierlabel .d{width:11px;height:11px;border-radius:50%}
+.tw .d{background:var(--canopy)}.tw{color:var(--canopy-text)}
+.tabm .d{background:var(--blue)}.tabm{color:var(--blue-text)}
+.tcold .d{background:var(--terracotta)}.tcold{color:var(--terra-text)}
+/* figures */
+figure{margin:26px 0}
+.fig{width:100%;background:var(--card);border:1px solid var(--line);border-radius:13px;padding:22px}
+.figscroll{overflow-x:auto}
+@media(max-width:700px){.figscroll svg{min-width:600px}}
+svg{width:100%;height:auto;display:block}
+figcaption{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.03em;color:var(--muted);margin-top:12px;line-height:1.5}
+.svglabel{font-family:'JetBrains Mono';font-size:11px;fill:var(--ink)}
+.svgmuted{font-family:'JetBrains Mono';font-size:10px;fill:var(--muted)}
+.svgnum{font-family:'Archivo Black';fill:var(--ink)}
+/* details/disclosure */
+details{margin:12px 0;border:1px solid var(--line);border-radius:9px;overflow:hidden;background:var(--card)}
+summary{list-style:none;cursor:pointer;padding:12px 16px;font-family:'JetBrains Mono';font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:10px;background:rgba(0,0,0,.03)}
+[data-theme="dark"] summary{background:rgba(255,255,255,.04)}
+summary::-webkit-details-marker{display:none}
+summary .chip{font-weight:700;color:var(--canopy-text);border:1px solid var(--line);border-radius:5px;padding:0 7px;font-size:13px}
+details[open] summary .chip{color:var(--terra-text)}
+details[open] summary .verb{display:none}
+.dbody{padding:6px 16px 14px}
+/* clean list */
+ul.clean{list-style:none;margin:10px 0}
+ul.clean li{position:relative;padding-left:22px;margin:7px 0;color:var(--ink)}
+ul.clean li::before{content:'▸';position:absolute;left:0;color:var(--canopy-text)}
+/* buttons */
+.btn{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:14px 22px;border-radius:8px;display:inline-block;transition:transform .15s;cursor:pointer}
+.btn:hover{transform:translateY(-2px)}
+.btn.primary{background:var(--canopy);color:var(--asphalt)}
+.btn.ghost{background:none;border:1px solid var(--line);color:var(--ink)}
+.btnrow{display:flex;gap:12px;flex-wrap:wrap;margin-top:22px}
+/* move cards (overview) */
+.move{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 20px;cursor:pointer;transition:border-color .15s,transform .15s;display:block}
+.move:hover{border-color:var(--canopy);transform:translateY(-2px)}
+.move .mn{font-family:'JetBrains Mono';font-size:11px;letter-spacing:.1em;color:var(--pink-text);margin-bottom:8px}
+.move .mt{font-family:'Archivo Black';font-size:16px;text-transform:uppercase;margin-bottom:6px}
+.move .md{font-size:13.5px;color:var(--chalk)}
+.move .arrow{font-family:'JetBrains Mono';font-size:11px;color:var(--canopy-text);margin-top:10px;letter-spacing:.06em}
+/* pricing matrix */
+.pm{width:100%;border-collapse:separate;border-spacing:0;margin-top:18px;font-size:13px}
+.pm th,.pm td{padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top;text-align:left}
+.pm .rowlbl{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);width:180px}
+.pm .ohead{font-family:'Archivo Black';font-size:16px;text-transform:uppercase}
+.pm .price{font-family:'Archivo Black';font-size:22px;color:var(--canopy-text)}
+.pm .per{font-family:'JetBrains Mono';font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em}
+.pm td.rec{background:var(--panel-deep);color:#F4F1EA}
+.pm td.rec .ohead{color:#fff}
+.pm td.rec .price{color:#D4FF3D}
+.pm td.rec .per{color:rgba(216,212,200,.7)}
+.pm .rectint{background:rgba(13,45,94,.06)}
+[data-theme="dark"] .pm .rectint{background:rgba(91,184,224,.08)}
+.recpill{font-family:'JetBrains Mono';font-size:9px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;background:var(--canopy);color:var(--asphalt);padding:3px 8px;border-radius:20px;display:inline-block;margin-bottom:8px}
+.ck{color:var(--moss-text);font-weight:700}
+.cx{color:var(--muted)}
+.cp{color:var(--clay-text);font-weight:700}
+td.rec .ck{color:#8FC24E}td.rec .cp{color:#FFB627}td.rec .cx{color:rgba(216,212,200,.55)}
+.freebar{background:rgba(0,0,0,.03);border:1px solid var(--line);border-left:3px solid var(--moss);border-radius:10px;padding:14px 18px;margin-top:16px;font-size:13.5px;color:var(--ink)}
+[data-theme="dark"] .freebar{background:rgba(123,170,62,.08)}
+/* CTA */
+.ctablock{background:var(--panel-deep);border-radius:16px;padding:40px 36px;margin-top:30px;text-align:center}
+.ctablock h2{font-family:'Archivo Black';font-size:clamp(24px,3.4vw,36px);text-transform:uppercase;color:#F4F1EA;line-height:1.02}
+.ctablock h2 em{color:#D4FF3D;font-style:italic}
+.ctablock p{color:rgba(216,212,200,.85);max-width:600px;margin:14px auto 0;font-size:15px}
+.ctablock .btnrow{justify-content:center}
+/* footer */
+.foot{padding:30px 0 60px}
+.foot .fb{font-family:'JetBrains Mono';font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);font-weight:700}
+.foot .note{color:var(--muted);font-size:11.5px;margin-top:12px;max-width:860px;line-height:1.6}
+.hl{color:var(--canopy-text)}
+</style>
+<style>
+/* ---- supplemental room classes ---- */
+.card.th{border-left:4px solid var(--hazard)}
+.card.th .why{border-left-color:var(--hazard)}.card.th .why b{color:var(--terra-text)}
+.tab.soon{opacity:.5;cursor:default}
+.ordchip{font-family:'JetBrains Mono';font-size:12px;font-weight:700;letter-spacing:.06em;background:rgba(0,0,0,.06);border:1px solid var(--line);color:var(--ink);border-radius:7px;padding:3px 11px;margin-right:6px}
+[data-theme="dark"] .ordchip{background:rgba(255,255,255,.07)}
+.pull{font-family:'Fraunces',serif;font-style:italic;font-size:clamp(19px,2.5vw,25px);line-height:1.4;color:var(--ink);max-width:820px;margin:24px 0;padding-left:20px;border-left:3px solid var(--canopy)}
+.pull b{color:var(--canopy-text);font-weight:500}
+.pillhead{font-family:'JetBrains Mono';font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:12px;margin-bottom:4px}
+.recpill2{font-family:'JetBrains Mono';font-size:9px;letter-spacing:.08em;text-transform:uppercase;font-weight:700;background:var(--canopy);color:var(--asphalt);padding:3px 8px;border-radius:20px;display:inline-block;margin-bottom:8px}
+@media(max-width:480px){.brand{white-space:normal}.scroll .pm{min-width:640px}}
+.pm th.rec{background:var(--panel-deep);border-top:3px solid var(--canopy)}
+.pm th.rec .ohead{color:#fff}.pm th.rec .price{color:#D4FF3D}.pm th.rec .per{color:rgba(216,212,200,.7)}
+.moss-k{color:var(--moss-text)}
+.callout .k.mossk{color:#3f6a1c}
+[data-theme="dark"] .callout .k.mossk{color:#7BAA3E}
+.datastat{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:16px 18px;border-left:4px solid var(--blue)}
+.datastat .n{font-family:'Archivo Black';font-size:26px;line-height:1;color:var(--blue-text)}
+.datastat .l{font-family:'Inter';font-size:12.5px;color:var(--chalk);margin-top:8px;line-height:1.4}
+.datastat .s{font-family:'JetBrains Mono';font-size:9.5px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);margin-top:8px}
+.gsboard{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}
+@media(max-width:900px){.gsboard{grid-template-columns:1fr 1fr}}
+@media(max-width:520px){.gsboard{grid-template-columns:1fr}}
+.gscol{background:var(--card);border:1px solid var(--line);border-radius:11px;padding:14px}
+.gscol h5{font-family:'Archivo Black';font-size:13px;text-transform:uppercase;letter-spacing:-.01em;margin-bottom:4px}
+.gscol .cd{font-family:'JetBrains Mono';font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.motion{background:rgba(0,0,0,.03);border:1px solid var(--line);border-radius:9px;padding:9px 11px;margin:7px 0}
+[data-theme="dark"] .motion{background:rgba(255,255,255,.04)}
+.motion .mt{font-size:12.5px;font-weight:600;color:var(--ink);line-height:1.3}
+.motion .mb{margin-top:7px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.owner{font-family:'JetBrains Mono';font-size:8.5px;letter-spacing:.04em;color:var(--muted);border:1px solid var(--line);border-radius:4px;padding:1px 5px}
+</style>
+</head>
+<body>
+<!--
+============================================================================
+RECOMMENDATION VARIABLES  |  single source of truth for this room
+============================================================================
+THESIS: Turn United Growth's own expertise into a premium, consistent LinkedIn
+  company-page presence that builds familiarity and credibility across its whole
+  ecosystem, so the right people come to know the firm and reach out on their own
+  terms. Familiarity, not solicitation.
+ENTRY MOTION: organic content engine (monthly SME interview -> company-page content)
+RECOMMENDED OPTION: The Engine, $2,500/mo + $1,500 setup (Faith-confirmed). Ladder: The Engine $2,500 / The Amplified Engine $4,250 / The Authority Engine $5,750 (all Justin-confirmed).
+STARTING MOTIONS: 1 monthly interview -> 1 long video + 8 clips + posts (3 personal + 1 company/wk) + newsletter + blog; warm retargeting; company-page management; monthly report
+CHANNELS: thought-leadership content engine across personal + company LinkedIn, YouTube, newsletter, blog. Tiers 1-2 add a warm LinkedIn retargeting layer (content-boosting only, max $5k/mo spend, not solicitation). Tier 3 is pure organic, max output, SEO/AEO.
+HERO PILLARS: Portfolio in Motion; The Firm & Its People; How Necessity Retail Works; The Market Read Plainly; Community & Place; Where We Are
+CADENCE: 3 personal + 1 company/wk (entry) up to 5 personal + 3 company/wk (top); 1-3 interviews/mo
+DISTRIBUTION: company page (organic reach ~1.6% of followers) compounded via engagement quality + team/exec amplification (+168% impressions, 4.3x engagement, 3.8x ecosystem exposure) [source: Impactable Algorithm Insights KB]
+GATE: no returns figures, no invitations to invest, soft learn-more at most
+============================================================================
+-->
+<nav class="top dark-panel">
+  <div class="inner">
+    <div class="brand">IMPACTABLE<span class="sep">// United Growth</span></div>
+    <div class="tabs">
+      <button class="tab active" data-v="overview">Overview</button>
+      <button class="tab" data-v="whitespace">White Space</button>
+      <button class="tab" data-v="targeting">Audience</button>
+      <button class="tab" data-v="messaging">Messaging</button>
+      <button class="tab" data-v="ecosystem">Ecosystem</button>
+      <button class="tab" data-v="howitworks">How It Works</button>
+      <button class="tab" data-v="paths">Paths Forward</button>
+    </div>
+    <div class="navright">
+      <a class="nav-cta" href="https://landbot.online/v3/H-2201411-ZNNL8EM9RF7C2XAC/index.html" target="_blank" rel="noopener">Talk it through</a>
+      <button class="themeBtn" id="themeBtn" aria-label="Toggle theme">&#9790;</button>
+    </div>
+  </div>
+</nav>
+<div class="wrap">
+
+<!-- ================= OVERVIEW ================= -->
+<section class="view active" id="overview">
+  <section class="blk">
+    <div class="kicker">Intelligence Room &nbsp;&middot;&nbsp; LinkedIn Company-Page Strategy</div>
+    <h1 class="big">A premium presence, <em>built to be found</em></h1>
+    <p class="lede">United Growth has a forty-year record and almost no digital footprint. This room lays out how to turn the firm's own expertise into a consistent, premium thought-leadership presence, across the firm's own and its leaders' LinkedIn, plus YouTube, newsletter and blog, that builds familiarity across its whole ecosystem, brokers, sellers, investors, partners and tenants, so the right people come to know the firm and reach out on their own terms. Built for familiarity, not solicitation.</p>
+    <div class="pull">The goal is not more posts. It is that the right people <b>recognize the name and trust the firm</b> before a single conversation begins.</div>
+
+    <h3 class="sub">The plan, <em>in six moves</em></h3>
+    <div class="grid2">
+      <a class="move" data-goto="whitespace"><div class="mn">MOVE 01 &middot; WHITE SPACE</div><div class="mt">Find the open lane</div><div class="md">The market is a barbell of loud scaled brands and an invisible long tail. United Growth owns the quiet premium middle, and can say so.</div><div class="arrow">See the white space &rarr;</div></a>
+      <a class="move" data-goto="targeting"><div class="mn">MOVE 02 &middot; AUDIENCE</div><div class="mt">Know who we speak to</div><div class="md">Five audiences across the ecosystem, how organic content reaches each, and the cadence that keeps it premium, not noisy.</div><div class="arrow">See the audiences &rarr;</div></a>
+      <a class="move" data-goto="messaging"><div class="mn">MOVE 03 &middot; MESSAGING</div><div class="mt">Set the voice and pillars</div><div class="md">A premium, non-solicitous voice and six content pillars, each with a reliable source of material so the page never runs dry.</div><div class="arrow">See the messaging &rarr;</div></a>
+      <a class="move" data-goto="ecosystem"><div class="mn">MOVE 04 &middot; ECOSYSTEM</div><div class="mt">See it as a system</div><div class="md">The content engine on one screen: what starts now, what gets built, and where it can grow later.</div><div class="arrow">See the system &rarr;</div></a>
+      <a class="move" data-goto="howitworks"><div class="mn">MOVE 05 &middot; HOW IT WORKS</div><div class="mt">Understand the engine</div><div class="md">One monthly interview becomes a month of premium content. The process, the distribution, and the data behind it.</div><div class="arrow">See how it works &rarr;</div></a>
+      <a class="move" data-goto="paths"><div class="mn">MOVE 06 &middot; PATHS FORWARD</div><div class="mt">Choose the cadence</div><div class="md">Three ways to work together, starting at $2,500 a month. United Growth talks; Impactable does the rest.</div><div class="arrow">See the paths &rarr;</div></a>
+    </div>
+
+    <div class="btnrow">
+      <a class="btn primary" href="https://landbot.online/v3/H-2201411-ZNNL8EM9RF7C2XAC/index.html" target="_blank" rel="noopener">Book a call</a>
+      <a class="btn ghost" data-goto="whitespace" href="#whitespace">Start with the white space</a>
+    </div>
+    <div class="metastrip">
+      <span>Content-led engine</span>
+      <span>Personal + company</span>
+      <span>LinkedIn, YouTube, newsletter, blog</span>
+      <span>August 2026</span>
+    </div>
+  </section>
+</section>
+
+<!-- ================= WHITE SPACE ================= -->
+<section class="view" id="whitespace">
+
+  <!-- HERO -->
+  <section class="blk">
+    <div class="kicker">Competitive White Space &nbsp;&middot;&nbsp; Necessity-Retail Investment and Development</div>
+    <h1 class="big">A crowded room, <em>and an empty middle</em></h1>
+    <p class="lede">Ten competitors, read from their own sites, offering documents, press and review databases. Necessity retail is one of the most saturated messaging markets in private real estate. The opportunity for United Growth is not a sharper version of the same claim. It is the position United Growth already occupies and has never said out loud.</p>
+    <div class="metastrip">
+      <span>Built from public sources</span>
+      <span>No account access</span>
+      <span>Estimates are indicative</span>
+      <span>August 2026</span>
+    </div>
+  </section>
+
+  <!-- SECTION 01: SATURATION -->
+  <section class="blk">
+    <div class="secnum">WHITE SPACE &nbsp;&middot;&nbsp; SECTION 01</div>
+    <h2 class="sec">What everyone says, <em>and why it stops working</em></h2>
+    <p class="sub">The competitive set divides across two fronts: private sponsors marketing to the same accredited investors for capital, and the public and private operators United Growth meets on deals. On both fronts the vocabulary is nearly identical.</p>
+
+    <div class="grid4" style="margin-top:22px">
+      <div class="stat"><div class="n">10</div><div class="l">Competitors mapped</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Competitive fronts</div></div>
+      <div class="stat"><div class="n">7</div><div class="l">Shared, saturated claims</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">Open lane in the middle</div></div>
+    </div>
+
+    <h3 class="sub">The messaging is <em>a commodity</em></h3>
+    <p class="body">Nearly every headline in the category is shared by most of the field. The longer the bar, the more crowded the claim, and the less it separates anyone who uses it. United Growth's current site language sits inside this same zone, which is an accurate map of a crowded market rather than a flaw in the copy.</p>
+    <figure>
+      <div class="fig figscroll">
+        <svg viewBox="0 0 900 350" role="img" aria-label="Message saturation by theme">
+          <g class="svglabel" font-size="12">
+            <text x="0" y="24">Necessity-based / recession-resilient</text><rect x="360" y="12" width="510" height="18" rx="4" fill="var(--barterra)"/><text x="862" y="26" text-anchor="end" font-size="10" fill="#fff">EXTREME</text>
+            <text x="0" y="70">Grocery-anchored</text><rect x="360" y="58" width="495" height="18" rx="4" fill="var(--barterra)"/><text x="847" y="72" text-anchor="end" font-size="10" fill="#fff">EXTREME</text>
+            <text x="0" y="116">Vertically integrated, in-house</text><rect x="360" y="104" width="460" height="18" rx="4" fill="var(--barclay)"/><text x="812" y="118" text-anchor="end" font-size="10" fill="#1a1200">HIGH</text>
+            <text x="0" y="162">Institutional quality for individuals</text><rect x="360" y="150" width="440" height="18" rx="4" fill="var(--barclay)"/><text x="792" y="164" text-anchor="end" font-size="10" fill="#1a1200">HIGH</text>
+            <text x="0" y="208">Stable income, capital preservation</text><rect x="360" y="196" width="430" height="18" rx="4" fill="var(--barclay)"/><text x="782" y="210" text-anchor="end" font-size="10" fill="#1a1200">HIGH</text>
+            <text x="0" y="254">Investment-grade, credit tenants</text><rect x="360" y="242" width="415" height="18" rx="4" fill="var(--barclay)"/><text x="767" y="256" text-anchor="end" font-size="10" fill="#1a1200">HIGH</text>
+            <text x="0" y="300">Cycle-tested track record</text><rect x="360" y="288" width="330" height="18" rx="4" fill="var(--barmoss)"/><text x="682" y="302" text-anchor="end" font-size="10" fill="#fff">MEDIUM</text>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Read from competitor homepages, offering pages and press. Every extreme and high claim is table stakes. Leading with any of them is invisible, because the buyer cannot tell one firm from the next on the strength of it.</figcaption>
+    </figure>
+
+    <details>
+      <summary><span class="chip">+</span><span class="verb">Show </span>who says each claim, in full</summary>
+      <div class="dbody">
+        <div class="scroll"><table class="tbl">
+          <thead><tr><th>Saturated theme</th><th>Who says it</th><th>Why it fails as a lead</th></tr></thead>
+          <tbody>
+            <tr><td class="k">Necessity-based, recession-resilient</td><td>First National Realty Partners, ExchangeRight, Phillips Edison, Whitestone, InvenTrust, United Growth</td><td>Universal. It defines the category, so it cannot separate anyone inside it.</td></tr>
+            <tr><td class="k">Grocery-anchored</td><td>First National Realty Partners, Phillips Edison, Regency, InvenTrust</td><td>The default identity of the whole sector.</td></tr>
+            <tr><td class="k">Vertically integrated, in-house</td><td>First National Realty Partners, ExchangeRight, Four Springs, United Growth</td><td>Everyone claims it. Integration only matters when tied to a specific outcome.</td></tr>
+            <tr><td class="k">Institutional quality for individuals</td><td>First National Realty Partners, ExchangeRight, access platforms</td><td>The standard access pitch. Buyers have heard it from every sponsor and platform.</td></tr>
+            <tr><td class="k">Stable income, capital preservation</td><td>ExchangeRight, Four Springs, and effectively all</td><td>A category promise, not a reason to choose one firm.</td></tr>
+            <tr><td class="k">Investment-grade, credit tenants</td><td>ExchangeRight, Four Springs, Agree Realty, Phillips Edison</td><td>Table stakes in net lease. Expected, not differentiating.</td></tr>
+            <tr><td class="k">Cycle-tested track record</td><td>First National Realty Partners, ExchangeRight, Phillips Edison, United Growth</td><td>Common, and easy to say. The specific proof matters more than the phrase.</td></tr>
+          </tbody>
+        </table></div>
+      </div>
+    </details>
+  </section>
+<!--APPEND-->
+
+  <!-- SECTION 02: THE SHAPE -->
+  <section class="blk">
+    <div class="secnum">WHITE SPACE &nbsp;&middot;&nbsp; SECTION 02</div>
+    <h2 class="sec">The market is <em>a barbell</em></h2>
+    <p class="sub">The necessity-retail field splits into two ends. At one end sit a handful of scaled sponsors with full demand engines that publish constantly. At the other sits a vast, fragmented long tail of private owner-operators with real assets and no marketing, the very owners Phillips Edison says it competes against for deals. United Growth sits in the middle: the forty-year record, the integrated platform and the development capability of the top tier, paired with the quiet digital footprint of the long tail.</p>
+
+    <p class="body">Plotted on marketing presence against value-creation model, a clear space opens up. Among the private sponsors competing for the same investor capital, no one both builds and sources its own centers and is genuinely visible. That upper-right space is United Growth's to move into, on the strength of what it already does.</p>
+    <figure>
+      <div class="fig figscroll">
+        <svg viewBox="0 0 900 480" role="img" aria-label="Competitor positioning map, marketing presence against value-creation model">
+          <line x1="90" y1="40" x2="90" y2="410" stroke="var(--line)" stroke-width="1.5"/>
+          <line x1="90" y1="410" x2="860" y2="410" stroke="var(--line)" stroke-width="1.5"/>
+          <text x="90" y="440" class="svgmuted">Quiet presence</text>
+          <text x="860" y="440" class="svgmuted" text-anchor="end">Full demand engine</text>
+          <text x="34" y="405" class="svgmuted" transform="rotate(-90 34 405)">Acquires existing assets</text>
+          <text x="34" y="150" class="svgmuted" transform="rotate(-90 34 150)">Develops and sources its own</text>
+          <!-- open lane highlight, upper right -->
+          <rect x="470" y="60" width="380" height="150" rx="10" fill="var(--barcanopy)" opacity="0.10"/>
+          <text x="660" y="120" text-anchor="middle" class="svglabel" style="fill:var(--canopy-text);font-weight:700" font-size="13">THE OPEN LANE</text>
+          <text x="660" y="142" text-anchor="middle" class="svgmuted" font-size="11">Builds and sources its own centers, and is visible</text>
+          <!-- competitor dots -->
+          <g font-size="11" class="svglabel">
+            <circle cx="775" cy="300" r="6" fill="var(--barterra)"/><text x="762" y="304" text-anchor="end">First National Realty Partners</text>
+            <circle cx="740" cy="345" r="6" fill="var(--barterra)"/><text x="727" y="349" text-anchor="end">ExchangeRight</text>
+            <circle cx="820" cy="380" r="6" fill="var(--barterra)"/><text x="600" y="384" text-anchor="end">Access platforms</text>
+            <circle cx="300" cy="330" r="6" fill="var(--barclay)"/><text x="312" y="334">Four Springs</text>
+            <circle cx="180" cy="300" r="6" fill="var(--barclay)"/><text x="192" y="304">Fragmented private owners</text>
+            <!-- United Growth current position, upper left -->
+            <circle cx="230" cy="120" r="8" fill="var(--barcanopy)" stroke="var(--ink)" stroke-width="1.5"/><text x="246" y="112" style="fill:var(--canopy-text);font-weight:700">United Growth today</text>
+            <text x="246" y="130" class="svgmuted" font-size="10">Top-tier capability, quiet presence</text>
+            <!-- arrow to open lane, below the label block -->
+            <line x1="300" y1="158" x2="548" y2="158" stroke="var(--canopy)" stroke-width="1.5" stroke-dasharray="5 4"/>
+            <polygon points="548,153 560,158 548,163" fill="var(--canopy)"/>
+          </g>
+        </svg>
+      </div>
+      <figcaption>Positioning is indicative, read from public messaging and offering materials, not a survey. This map covers the private-capital competitors only. The public real estate investment trusts (Phillips Edison, Regency, Kimco, Agree Realty) develop and are visible, but raise public-market capital rather than private accredited capital, a different model, so they sit off this map.</figcaption>
+    </figure>
+
+    <div class="callout">
+      <div class="k">The structural read</div>
+      <p>The white space is not a message United Growth lacks. It is a position United Growth already holds, top-tier operating capability with a develop-and-source model, and has simply never claimed out loud. Every direct competitor for the same investor capital is either running an aggressive digital demand engine or distributing through the advisor and 1031 exchange channel. None pairs a forty-year integrated operating record with genuine ground-up development and off-market sourcing, told plainly. That combination is open.</p>
+    </div>
+  </section>
+
+  <!-- SECTION 03: OWNABLE LANES -->
+  <section class="blk">
+    <div class="secnum">WHITE SPACE &nbsp;&middot;&nbsp; SECTION 03</div>
+    <h2 class="sec">Four lanes <em>United Growth can own</em></h2>
+    <p class="sub">Each lane stands on what United Growth already does, maps to a specific buyer, and cites real proof. None of them require a marketing partner to be true.</p>
+
+    <div class="card tl">
+      <div class="chhead"><span class="clabel" style="color:var(--canopy-text)">LANE 01</span><span class="ctitle">Create the asset, do not just buy it</span></div>
+      <p class="body" style="margin-top:0">Almost every capital-side competitor is an acquirer or aggregator. First National Realty Partners, ExchangeRight and Four Springs buy existing centers and net-lease assets. The story of a sponsor that both develops ground-up, build-to-suit properties and executes value-add acquisitions is essentially unclaimed in the investor conversation.</p>
+      <div class="ev"><b>Why it matters:</b> it puts investors earlier in the value-creation chain than a stabilized purchase, where more of the value is manufactured rather than bought at market. That is a genuinely different risk-and-return profile the category is not articulating.</div>
+      <div class="ev"><b>Evidence:</b> United Growth runs a purpose-built development platform, ground-up, build-to-suit and develop-to-core, alongside value-add acquisitions, with entitlements and pre-construction handled in-house (site). No competitor in the set pairs both engines in its messaging.</div>
+      <div class="ev"><b>Serves:</b> the investor who wants to be earlier than a stabilized-asset buyer, the developer or capital joint-venture partner, and the national net-lease tenant seeking a build-to-suit developer.</div>
+      <div class="why"><b>Opportunity size:</b> High.</div>
+    </div>
+
+    <div class="card tl">
+      <div class="chhead"><span class="clabel" style="color:var(--canopy-text)">LANE 02</span><span class="ctitle">Off-market sourcing as the visible edge</span></div>
+      <p class="body" style="margin-top:0">Everyone claims vertical integration. Almost no one builds a brand on where the deals actually come from. The off-market, relationship-sourced origination advantage is the least-marketed real moat in the category.</p>
+      <div class="ev"><b>Why it matters:</b> entry price sets the return. Anyone who knows real estate knows that sourcing off-market, away from auction pricing, is the most durable edge a sponsor can hold, and the hardest to copy, because it rests on decades of relationships.</div>
+      <div class="ev"><b>Evidence:</b> United Growth sources more than half of its deals off-market through direct relationships (site). Four Springs only hints at the small-cap niche; no competitor makes sourcing the headline. This is United Growth's to claim.</div>
+      <div class="ev"><b>Serves:</b> the sophisticated investor and family office that underwrites entry basis, and, on the other side, the brokers and sellers who supply off-market deals.</div>
+      <div class="why"><b>Opportunity size:</b> High.</div>
+    </div>
+
+    <div class="card tl">
+      <div class="chhead"><span class="clabel" style="color:var(--canopy-text)">LANE 03</span><span class="ctitle">Community impact as a returns thesis</span></div>
+      <p class="body" style="margin-top:0">Whitestone speaks to community, but frames it as a leasing tactic. No one in the set connects community impact to underwriting outcomes and investor returns in a single argument.</p>
+      <div class="ev"><b>Why it matters:</b> United Growth's own thesis is that centers which genuinely matter to their trade areas retain tenants longer, lease vacancies faster and hold value through cycles. That reframes community impact from a feel-good line into a driver of durable value, which is a differentiated investment argument rather than a brand mood.</div>
+      <div class="ev"><b>Evidence:</b> the thesis is already on United Growth's site. What it lacks is distributable proof, named centers with before-and-after trade-area outcomes. Whitestone's community framing confirms the theme resonates but stops short of the returns link.</div>
+      <div class="ev"><b>Serves:</b> values-aligned accredited investors, family offices and impact-curious allocators, plus municipalities and joint-venture partners evaluating a developer.</div>
+      <div class="why"><b>Opportunity size:</b> Medium to high. Verification item: package two or three named centers with trade-area outcomes to move this from claim to proof.</div>
+    </div>
+
+    <div class="card tl">
+      <div class="chhead"><span class="clabel" style="color:var(--canopy-text)">LANE 04</span><span class="ctitle">The deal-side audience nobody courts with content</span></div>
+      <p class="body" style="margin-top:0">The entire competitive marketing conversation points at investors. Almost no one runs a demand motion aimed at the people who source the deals: brokers, private sellers and 1031 exchange sellers.</p>
+      <div class="ev"><b>Why it matters:</b> this lane is wide open and it compounds Lane 02. A content and outreach motion aimed at brokers and owners feeds the off-market sourcing engine that already produces more than half of acquisitions, and it carries none of the securities-marketing constraints that govern the capital side.</div>
+      <div class="ev"><b>Evidence:</b> United Growth already sources off-market from these relationships (site). Formalizing a demand motion around them extends an existing strength rather than inventing a new one. No competitor in the set is visibly doing this.</div>
+      <div class="ev"><b>Serves:</b> commercial real estate brokers, private and family sellers of neighborhood and grocery-anchored centers, 1031 exchange sellers, and undercapitalized owners.</div>
+      <div class="why"><b>Opportunity size:</b> High. The fastest, cleanest lane to activate, because it is unconstrained by investor-solicitation rules.</div>
+    </div>
+
+    <div class="frontier">
+      <div class="k">Open frontier, not a current advantage</div>
+      <p><b>Fee and structure transparency</b> is the category's unhealed wound. Two of the direct competitors carry litigation or arbitration flags and undisclosed-fee criticism, and Delaware Statutory Trusts broadly draw high-fee complaints. It is tempting to call transparency United Growth's edge. It is not, yet. United Growth does not publish fees or a track record either, so this is a frontier open to everyone, United Growth included, rather than a lane the firm owns today. It belongs on the roadmap as a trust lever the firm could deliberately choose to own. Naming it honestly is itself the differentiator the category lacks.</p>
+    </div>
+  </section>
+  <!-- SECTION 04: COMPETITOR PROFILES -->
+  <section class="blk">
+    <div class="secnum">WHITE SPACE &nbsp;&middot;&nbsp; SECTION 04</div>
+    <h2 class="sec">The ten competitors, <em>and how each is beatable</em></h2>
+    <p class="sub">Ranked by directness of competition with United Growth for capital and buyer attention. The first four are private sponsors raising from the same accredited pool. The next two are the closest public-market benchmarks on positioning and tone. The final four are the scale bracket United Growth defines itself against.</p>
+
+    <div class="card tt">
+      <div class="chhead"><span class="clabel" style="color:var(--terra-text)">01 &middot; CAPITAL</span><span class="ctitle">First National Realty Partners</span><span class="ctags">fnrpusa.com &middot; Red Bank, NJ &middot; most direct</span></div>
+      <p class="body" style="margin-top:0"><b>Positioning:</b> the number-one option for investors seeking high returns in grocery-anchored commercial real estate; institutional-quality necessity retail for accredited investors under Rule 506(c) (site).</p>
+      <p class="body"><b>Differentiators:</b> exclusive grocery-anchored focus, vertically integrated in-house platform, deal-by-deal access, and Self-Directed IRA investing.</p>
+      <div class="ev"><b>Strategic read:</b> the scaled version of exactly what United Growth does on the capital side, sold through the most developed digital demand engine in the set. It proves the model works and can be reached at scale. Its transparency and litigation exposure is the soft underbelly a disciplined, relationship-led operator positions against, without naming it.</div>
+      <details>
+        <summary><span class="chip">+</span><span class="verb">Show </span>full profile</summary>
+        <div class="dbody">
+          <table class="tbl"><tbody>
+          <tr><td class="k">Founded</td><td>2015, the same vintage as United Growth's fund series.</td></tr>
+          <tr><td class="k">Scale</td><td>65+ properties, 26 states, 12M+ square feet; roughly $920M raised across about 3,100 investors; $200M+ capital markets activity in 2025 (site, press).</td></tr>
+          <tr><td class="k">Marketing motion</td><td>Full-funnel: tag management, gated lead-capture content, steady press cadence, trade-show presence, active social, investor portal on Juniper Square (the same portal United Growth uses).</td></tr>
+          <tr><td class="k">Target and minimum</td><td>Accredited investors nationwide including retirement capital; $50,000 minimum.</td></tr>
+          <tr><td class="k">Watch</td><td>Fees not publicly disclosed; two active federal lawsuits alleging fraud and undisclosed fees, which the firm denies; no secondary market (review databases).</td></tr>
+          </tbody></table>
+        </div>
+      </details>
+    </div>
+
+    <div class="card tt">
+      <div class="chhead"><span class="clabel" style="color:var(--terra-text)">02 &middot; CAPITAL</span><span class="ctitle">ExchangeRight</span><span class="ctags">exchangeright.com &middot; Pasadena, CA &middot; net-lease and 1031 leader</span></div>
+      <p class="body" style="margin-top:0"><b>Positioning:</b> secure, free and generous. Net-leased portfolios of investment-grade necessity tenants delivering secure capital, stable income and strategic exits (site).</p>
+      <p class="body"><b>Differentiators:</b> distribution discipline (reportedly never a cut distribution since 2019), investment-grade tenants, and a Section 721 exit that rolls Delaware Statutory Trust interests into its Essential Income real estate investment trust.</p>
+      <div class="ev"><b>Strategic read:</b> ExchangeRight owns the net-lease and 1031 exchange conversation the way First National owns grocery-anchored private equity. United Growth's development arm is a different product, but any investor entering the category meets ExchangeRight first. The lesson is the power of owning one clearly-named lane and publishing relentlessly against it.</div>
+      <details>
+        <summary><span class="chip">+</span><span class="verb">Show </span>full profile</summary>
+        <div class="dbody">
+          <table class="tbl"><tbody>
+          <tr><td class="k">Founded</td><td>2012, Pasadena, CA.</td></tr>
+          <tr><td class="k">Scale</td><td>About $7B in assets, 1,400+ properties, 27M+ square feet across 47 to 48 states; fifth-largest sponsor in the 1031 exchange Delaware Statutory Trust market (press, marketplaces).</td></tr>
+          <tr><td class="k">Marketing motion</td><td>Distributes through 1031 and Delaware Statutory Trust marketplaces and financial advisors, plus a constant press cadence around fully-subscribed offerings.</td></tr>
+          <tr><td class="k">Target</td><td>Accredited investors, especially 1031 exchangers seeking tax deferral and passive income.</td></tr>
+          <tr><td class="k">Watch</td><td>Tenant-concentration questions raised by reviewers, illiquidity, and category-level fee load.</td></tr>
+          </tbody></table>
+        </div>
+      </details>
+    </div>
+
+    <div class="card tt">
+      <div class="chhead"><span class="clabel" style="color:var(--terra-text)">03 &middot; CAPITAL</span><span class="ctitle">Four Springs Capital Trust</span><span class="ctags">fscap.net &middot; Wall, NJ &middot; closest structural mirror</span></div>
+      <p class="body" style="margin-top:0"><b>Positioning:</b> institutional-quality net-leased real estate; stable, creditworthy-tenant income for accredited and 1031 exchange investors (site).</p>
+      <p class="body"><b>Differentiators:</b> targets $5M to $200M assets specifically to sit below the large institutions, a management team drawn from public net-lease real estate investment trusts, and a strong rent-collection record.</p>
+      <div class="ev"><b>Strategic read:</b> the closest structural mirror to United Growth. A private, relationship-driven net-lease operator deliberately fishing below the institutions in the small-cap niche, with a following near one thousand and no real demand engine. It shows both the shared opportunity and the shared blind spot. Whoever builds distribution first in this middle tier wins it.</div>
+      <details>
+        <summary><span class="chip">+</span><span class="verb">Show </span>full profile</summary>
+        <div class="dbody">
+          <table class="tbl"><tbody>
+          <tr><td class="k">Founded</td><td>2012, Wall, NJ.</td></tr>
+          <tr><td class="k">Scale</td><td>$1B+ equity raised, 1,000+ exchanges completed, $800M+ in replacement properties; roughly 1,000 followers, comparable to United Growth (site).</td></tr>
+          <tr><td class="k">Marketing motion</td><td>Advisor and intermediary distribution plus a modest organic presence. Not a self-built demand engine.</td></tr>
+          <tr><td class="k">Watch</td><td>Securities firms publicizing arbitration investigations into some Delaware Statutory Trust programs; small organic footprint despite a long history.</td></tr>
+          </tbody></table>
+        </div>
+      </details>
+    </div>
+
+    <div class="card tt">
+      <div class="chhead"><span class="clabel" style="color:var(--terra-text)">04 &middot; CAPITAL</span><span class="ctitle">Access platforms</span><span class="ctags">RealtyMogul, EquityMultiple and peers &middot; marketplace access</span></div>
+      <p class="body" style="margin-top:0"><b>Positioning:</b> technology-first access. Browse, compare and invest in institutional real estate online, including necessity-retail and net-lease deals, with low minimums.</p>
+      <p class="body"><b>Differentiators:</b> digital-first self-serve investing, marketplace breadth across sponsors, and portfolio dashboards.</p>
+      <div class="ev"><b>Strategic read:</b> platforms are not operators, so they do not compete on real estate quality. They compete for investor attention and they set the digital-experience bar. United Growth's answer is not to become a platform but to own the direct-sponsor relationship these platforms commoditize, backed by forty years of operating proof.</div>
+      <details>
+        <summary><span class="chip">+</span><span class="verb">Show </span>full profile</summary>
+        <div class="dbody">
+          <table class="tbl"><tbody>
+          <tr><td class="k">Model</td><td>Marketplaces that syndicate access to commercial real estate and non-traded real estate investment trusts for accredited (and sometimes non-accredited) investors.</td></tr>
+          <tr><td class="k">Marketing motion</td><td>The most sophisticated pure-digital acquisition in the category: paid search, paid social, content and email at volume.</td></tr>
+          <tr><td class="k">Watch</td><td>Marketplace, not operator; sponsor quality varies deal to deal; some platform real estate investment trusts have paused redemptions (review databases).</td></tr>
+          </tbody></table>
+        </div>
+      </details>
+    </div>
+
+    <div class="card tb">
+      <div class="chhead"><span class="clabel" style="color:var(--blue-text)">05 &middot; BENCHMARK</span><span class="ctitle">Phillips Edison &amp; Company</span><span class="ctags">Nasdaq: PECO &middot; Cincinnati, OH &middot; scaled grocery-anchored</span></div>
+      <p class="body" style="margin-top:0"><b>Positioning:</b> one of the nation's largest owners of grocery-anchored neighborhood and community shopping centers, delivering dependable per-share cash flow and dividend growth (filings).</p>
+      <div class="ev"><b>Strategic read:</b> the benchmark for what a fully built-out grocery-anchored investor story looks like, and a useful north star for messaging. Not head-to-head for United Growth's private capital, but it validates the category and, notably, concedes that it competes mostly against private owners for deals, leaving the small-cap, off-market segment where United Growth operates.</div>
+      <details>
+        <summary><span class="chip">+</span><span class="verb">Show </span>full profile</summary>
+        <div class="dbody">
+          <table class="tbl"><tbody>
+          <tr><td class="k">Founded</td><td>1991; grocery-anchored focus since inception; public since 2021. Previously ran non-listed real estate investment trusts that raised roughly $3B (press).</td></tr>
+          <tr><td class="k">Scale</td><td>$6.3B+ at listing and larger today; 97% occupancy; $400M to $500M 2026 acquisition guidance (press).</td></tr>
+          <tr><td class="k">Watch, for United Growth's purposes</td><td>Public vehicle: no tax-deferred 1031 or private-fund access for the investors United Growth serves. Scale removes the small-cap niche.</td></tr>
+          </tbody></table>
+        </div>
+      </details>
+    </div>
+
+    <div class="card tb">
+      <div class="chhead"><span class="clabel" style="color:var(--blue-text)">06 &middot; BENCHMARK</span><span class="ctitle">Whitestone REIT</span><span class="ctags">Houston, TX &middot; closest tonal peer on community</span></div>
+      <p class="body" style="margin-top:0"><b>Positioning:</b> anchoring centers to communities. A data-centric approach placing complementary businesses in neighborhood centers that serve everyday needs (site).</p>
+      <div class="ev"><b>Strategic read:</b> the one competitor already speaking United Growth's community language, which makes it the clearest signal the theme resonates and the clearest warning not to leave it half-claimed. Whitestone stops at community-as-leasing-tactic. United Growth's thesis, that community impact drives durable value and therefore returns, is a step further no one in the set has taken.</div>
+      <details>
+        <summary><span class="chip">+</span><span class="verb">Show </span>full profile</summary>
+        <div class="dbody">
+          <table class="tbl"><tbody>
+          <tr><td class="k">Model</td><td>Public real estate investment trust owning open-air, community-centered neighborhood centers in high-growth Sun Belt markets.</td></tr>
+          <tr><td class="k">Watch, for United Growth's purposes</td><td>Community framing applied to leasing, not connected to investor returns; public vehicle, no private access; regional rather than national.</td></tr>
+          </tbody></table>
+        </div>
+      </details>
+    </div>
+
+    <div class="card tm">
+      <div class="chhead"><span class="clabel" style="color:var(--moss-text)">07 to 10 &middot; SCALE BRACKET</span><span class="ctitle">The large public real estate investment trusts</span><span class="ctags">context, not head-to-head</span></div>
+      <p class="body" style="margin-top:0">Four names round out the top ten. United Growth defines itself against these players rather than competing with them directly: they are too large for the small-cap, off-market niche, and by their own accounts they compete mostly against private owners for deals.</p>
+      <table class="tbl"><tbody>
+        <tr><td class="k">InvenTrust Properties</td><td>Public Sun Belt grocery-anchored and necessity-retail real estate investment trust; the most format-comparable large player (press).</td></tr>
+        <tr><td class="k">Regency Centers</td><td>High-quality grocery-anchored real estate investment trust concentrated in affluent suburban markets; a benchmark on center quality and leasing economics (press).</td></tr>
+        <tr><td class="k">Kimco Realty</td><td>One of the largest United States owners of open-air, grocery-anchored shopping centers; the scale ceiling of the category (press).</td></tr>
+        <tr><td class="k">Agree Realty</td><td>Net-lease real estate investment trust developing and acquiring single-tenant properties for high-credit national tenants; the public comparable for United Growth's build-to-suit development arm (press).</td></tr>
+      </tbody></table>
+    </div>
+  </section>
+
+  <!-- SECTION 05: COMPARISON MATRIX -->
+  <section class="blk">
+    <div class="secnum">WHITE SPACE &nbsp;&middot;&nbsp; SECTION 05</div>
+    <h2 class="sec">All ten <em>at a glance</em></h2>
+    <p class="sub">The Front column separates the private sponsors competing for the same accredited capital from the public and net-lease players United Growth meets mainly on deals or as benchmarks.</p>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>Competitor</th><th>Front</th><th>Positioning</th><th>Key differentiator</th><th>Proof</th><th>Watch</th></tr></thead>
+      <tbody>
+        <tr><td class="k">First National Realty Partners</td><td>Capital</td><td>Grocery-anchored private equity for accredited investors</td><td>Full digital demand engine; deal-by-deal access</td><td>Strong</td><td>Undisclosed fees; active litigation</td></tr>
+        <tr><td class="k">ExchangeRight</td><td>Capital</td><td>Secure, free, generous net-lease</td><td>1031 plus 721 real estate investment trust roll-up</td><td>Strong</td><td>Tenant concentration; fee load</td></tr>
+        <tr><td class="k">Four Springs</td><td>Capital</td><td>Institutional-quality net lease</td><td>Small-cap niche below the institutions</td><td>Moderate</td><td>Arbitration inquiries; thin footprint</td></tr>
+        <tr><td class="k">Access platforms</td><td>Capital</td><td>Invest in commercial real estate online</td><td>Digital-first marketplace access</td><td>Moderate</td><td>Not an operator; sponsor quality varies</td></tr>
+        <tr><td class="k">Phillips Edison</td><td>Benchmark</td><td>Largest grocery-anchored trust</td><td>Thirty-year specialization; public scale</td><td>Strong</td><td>Public vehicle; no private access</td></tr>
+        <tr><td class="k">Whitestone</td><td>Benchmark</td><td>Community-centered neighborhood retail</td><td>Community plus data-centric leasing</td><td>Moderate</td><td>Community not tied to returns; regional</td></tr>
+        <tr><td class="k">InvenTrust</td><td>Benchmark</td><td>Sun Belt grocery-anchored trust</td><td>Format-comparable public peer</td><td>Moderate</td><td>Scale removes small-cap niche</td></tr>
+        <tr><td class="k">Regency Centers</td><td>Benchmark</td><td>Affluent-suburban grocery-anchored</td><td>Center quality; leasing economics</td><td>Strong</td><td>Too large for off-market small-cap</td></tr>
+        <tr><td class="k">Kimco Realty</td><td>Benchmark</td><td>Largest open-air owner</td><td>Scale and tenant relationships</td><td>Strong</td><td>Scale ceiling; not a peer</td></tr>
+        <tr><td class="k">Agree Realty</td><td>Deal</td><td>Net-lease development, high-credit</td><td>Build-to-suit at scale</td><td>Strong</td><td>Public; deal-side comparable only</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- SECTION 06: UVP + HOOKS + TAKEAWAYS -->
+  <section class="blk">
+    <div class="secnum">WHITE SPACE &nbsp;&middot;&nbsp; SECTION 06</div>
+    <h2 class="sec">The direction, <em>and how to say it</em></h2>
+    <p class="sub">Built from the white space, not from the current site copy.</p>
+
+    <div class="callout">
+      <div class="k">Positioning direction, for investors</div>
+      <p class="big-stmt">The necessity-retail firm that builds and sources its own centers instead of buying them at auction, turning four decades of off-market relationships and community-anchored development into durable value most sponsors can only purchase after the fact.</p>
+    </div>
+
+    <div class="grid2">
+      <div class="card tc">
+        <h4>Dial back</h4>
+        <div class="role">Saturated, keep only as supporting proof</div>
+        <ul class="clean">
+          <li>Necessity-based and recession-resilient as the lead line.</li>
+          <li>Fully integrated and in-house as a standalone claim. Tie it to the outcome it produces.</li>
+          <li>Grocery-anchored as the primary identity. It undersells the development arm.</li>
+          <li>Generic cycle-tested language. Replace with the specific numbers.</li>
+        </ul>
+      </div>
+      <div class="card tl">
+        <h4>Own</h4>
+        <div class="role">True, and no competitor can credibly copy it</div>
+        <ul class="clean">
+          <li>Dual engine: ground-up build-to-suit development plus value-add acquisitions.</li>
+          <li>Off-market origination: more than half of deals sourced away from auction.</li>
+          <li>Small-cap discipline in a niche the institutions are too large to work.</li>
+          <li>Community impact framed as a driver of retention, lease-up speed and value.</li>
+          <li>Forty years and 79 investments of operating proof.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="sub">Messaging hooks <em>by buying stage</em></h3>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>Stage</th><th>Hooks</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Unaware<br><span class="mono" style="font-size:10px;color:var(--muted)">problem education</span></td><td>The return is set the day you buy. Where does your sponsor find deals?<br>Most necessity-retail firms buy centers. Very few still build them.<br>A center that matters to its neighborhood is a center that holds its value.</td></tr>
+        <tr><td class="k">Aware<br><span class="mono" style="font-size:10px;color:var(--muted)">differentiation</span></td><td>Sourced off-market, not bid up at auction.<br>Two engines under one roof: we develop and we reposition.<br>Forty years of relationships competitors cannot buy.</td></tr>
+        <tr><td class="k">Engaged<br><span class="mono" style="font-size:10px;color:var(--muted)">conversion</span></td><td>79 investments, 47 metros, more than half sourced off-market.<br>Bring us your off-market center; we move fast and we close.<br>See how community-anchored underwriting has held value through cycles.</td></tr>
+      </tbody>
+    </table></div>
+
+    <h3 class="sub">The takeaways <em>in one place</em></h3>
+    <ul class="clean">
+      <li>The category speaks one saturated language. Leading with any of it is invisible.</li>
+      <li>The market is a barbell, and United Growth sits in the middle with top-tier capability and a quiet digital footprint.</li>
+      <li>The sharpest ownable position is the dual engine: United Growth builds and sources its own centers rather than buying them at auction.</li>
+      <li>The deal-side audience is courted by no one with content, is unconstrained by securities rules, and feeds the sourcing moat. It is the fastest lane to activate.</li>
+      <li>Community impact as a returns thesis is differentiated and ownable, once two or three named proof centers exist.</li>
+      <li>The most beatable direct competitors carry a trust gap on fees and litigation. Position against it by being disciplined, never by naming them.</li>
+      <li>Transparency is a category frontier, not a current advantage. Treat it as a lever to earn.</li>
+      <li>Single most important move: open the uncontested deal-side lane first, while sharpening the develop-and-source story for capital. Sequence beats a broad launch.</li>
+    </ul>
+  </section>
+
+  <!-- CTA -->
+  <section class="blk">
+    <div class="ctablock dark-panel">
+      <h2>This is the map. <em>Next is the motion.</em></h2>
+      <p>The audience targeting worksheet and the full-funnel motion design build directly on these four lanes. When you are ready, we will walk the sequence that turns this white space into a demand system.</p>
+      <div class="btnrow">
+        <a class="btn primary" href="https://landbot.online/v3/H-2201411-ZNNL8EM9RF7C2XAC/index.html" target="_blank" rel="noopener">Book a call</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="blk foot">
+    <div class="fb">Impactable &middot; Competitive White Space &middot; United Growth</div>
+    <div class="note">Built from public sources with no account access. Estimates and positioning are indicative reads, not forecasts, and unknowns are flagged rather than filled in. Competitor figures are drawn from company sites, offering materials, press and third-party review databases as of August 2026. DemandSense and Website Visitor ID referenced elsewhere in the Impactable system are Impactable's own software.</div>
+  </section>
+
+</section>
+<!-- ================= AUDIENCE ================= -->
+<section class="view" id="targeting">
+  <section class="blk">
+    <div class="kicker">Audience &amp; Distribution &nbsp;&middot;&nbsp; Who we reach, how, and how often</div>
+    <h1 class="big">A broad ecosystem, <em>reached on a rhythm</em></h1>
+    <p class="lede">Reach is earned through relevance, consistency and amplification, with an optional warm retargeting layer to guarantee the best content reaches the right accounts. This view maps the five audiences United Growth speaks to, the paths content travels to reach them, and the cadence that keeps the presence premium rather than noisy.</p>
+  </section>
+
+  <!-- AUDIENCES -->
+  <section class="blk">
+    <div class="secnum">AUDIENCE &nbsp;&middot;&nbsp; SECTION 01</div>
+    <h2 class="sec">The five audiences, <em>and what they should understand</em></h2>
+    <p class="sub">Nationwide, across the whole ecosystem. The frame is not what United Growth asks of each audience, it is what each should come to understand about the firm.</p>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>Audience</th><th>What they should come to understand</th><th>Pillars that serve them</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Investors</td><td>A disciplined, forty-year operator that creates and sources its own centers, with a clear point of view on value.</td><td>How It Works, Community &amp; Place, The Firm</td></tr>
+        <tr><td class="k">Brokers</td><td>An active, credible buyer and developer worth bringing off-market deals to, who moves and closes.</td><td>Portfolio in Motion, Where We Are, The Market</td></tr>
+        <tr><td class="k">Vendors &amp; partners</td><td>A professional, well-run firm and a good long-term partner on projects and services.</td><td>The Firm, Portfolio in Motion</td></tr>
+        <tr><td class="k">Potential tenants</td><td>A landlord that builds centers which serve their communities and last.</td><td>Community &amp; Place, Portfolio in Motion</td></tr>
+        <tr><td class="k">Others in commercial real estate</td><td>A firm with a genuine perspective and a real record, worth following.</td><td>The Market, How It Works, The Firm</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- DISTRIBUTION PATHS -->
+  <section class="blk">
+    <div class="secnum">AUDIENCE &nbsp;&middot;&nbsp; SECTION 02</div>
+    <h2 class="sec">The distribution <em>paths</em></h2>
+    <p class="sub">A company page, published alone, reaches only a small share of its own followers. So the presence is designed to compound: strong in-feed content earns algorithmic reach, and over time the team and partners extend each post into new networks. This is how a small firm reaches a national ecosystem without paid media.</p>
+    <figure>
+      <div class="fig figscroll">
+        <svg viewBox="0 0 900 420" role="img" aria-label="How content is distributed to reach the ecosystem">
+          <!-- source -->
+          <rect x="10" y="180" width="150" height="70" rx="10" fill="none" stroke="var(--barcanopy)" stroke-width="2"/>
+          <text x="85" y="210" text-anchor="middle" class="svglabel" font-size="12" style="font-weight:700">The expertise</text>
+          <text x="85" y="228" text-anchor="middle" class="svgmuted" font-size="10">Monthly interview</text>
+          <!-- company page -->
+          <rect x="215" y="180" width="150" height="70" rx="10" fill="none" stroke="var(--barblue)" stroke-width="2"/>
+          <text x="290" y="208" text-anchor="middle" class="svglabel" font-size="11.5" style="font-weight:700">Page + profiles</text>
+          <text x="290" y="226" text-anchor="middle" class="svgmuted" font-size="9.5">LinkedIn, YouTube, more</text>
+          <line x1="160" y1="215" x2="213" y2="215" stroke="var(--muted)" stroke-width="1.5"/><polygon points="213,211 221,215 213,219" fill="var(--muted)"/>
+          <!-- branch: direct reach (thin) -->
+          <path d="M365 200 C440 160 500 120 585 115" fill="none" stroke="var(--muted)" stroke-width="1.3" stroke-dasharray="4 4"/>
+          <text x="470" y="128" class="svgmuted" font-size="10">Direct page reach, about 1.6% of followers</text>
+          <!-- branch: amplification (thick) -->
+          <path d="M365 232 C440 270 500 300 585 305" fill="none" stroke="var(--barcanopy)" stroke-width="3"/>
+          <rect x="400" y="290" width="185" height="34" rx="7" fill="none" stroke="var(--barcanopy)" stroke-width="1.5"/>
+          <text x="492" y="311" text-anchor="middle" class="svglabel" font-size="11" style="font-weight:700">Team &amp; partner amplification</text>
+          <!-- ecosystem node -->
+          <rect x="600" y="150" width="180" height="120" rx="12" fill="var(--barcanopy)" opacity="0.09"/>
+          <rect x="600" y="150" width="180" height="120" rx="12" fill="none" stroke="var(--barcanopy)" stroke-width="2"/>
+          <text x="690" y="180" text-anchor="middle" class="svglabel" font-size="13" style="fill:var(--canopy-text);font-weight:700">The ecosystem</text>
+          <text x="690" y="202" text-anchor="middle" class="svgmuted" font-size="10">Investors &middot; Brokers</text>
+          <text x="690" y="218" text-anchor="middle" class="svgmuted" font-size="10">Partners &middot; Tenants</text>
+          <text x="690" y="234" text-anchor="middle" class="svgmuted" font-size="10">Commercial real estate</text>
+          <text x="690" y="256" text-anchor="middle" class="svglabel" font-size="10" style="fill:var(--canopy-text)">3.8x vs page alone</text>
+          <line x1="585" y1="115" x2="600" y2="175" stroke="var(--muted)" stroke-width="1.2" stroke-dasharray="4 4"/>
+          <line x1="585" y1="305" x2="600" y2="245" stroke="var(--barcanopy)" stroke-width="2.5"/><polygon points="597,238 603,247 592,248" fill="var(--barcanopy)"/>
+        </svg>
+      </div>
+      <figcaption>Reach figures are LinkedIn platform benchmarks from Impactable's Algorithm Insights analysis, not a forecast for this page. The point is structural: the page is the start of distribution, not the whole of it. Amplification is a lever the firm builds toward, not a day-one requirement.</figcaption>
+    </figure>
+    <div class="grid3">
+      <div class="datastat"><div class="n">+168%</div><div class="l">More impressions when a post is shared by a person rather than the page alone.</div><div class="s">Algorithm Insights</div></div>
+      <div class="datastat"><div class="n">4.3x</div><div class="l">More engagement on posts reshared or originated by team members.</div><div class="s">Algorithm Insights</div></div>
+      <div class="datastat"><div class="n">3.8x</div><div class="l">Higher exposure when reach is measured across the full ecosystem, not the page alone.</div><div class="s">Algorithm Insights</div></div>
+    </div>
+    <div class="callout blue">
+      <div class="k">What this means for a fifteen-person firm</div>
+      <p>Day one, the work is a consistent, high-quality company page. As the firm gets comfortable, even a few team or leadership voices resharing turns each post into several discovery points. Nothing here asks the team to become creators; it simply means the presence is built so it can compound when they are ready.</p>
+    </div>
+  </section>
+
+  <!-- CADENCE -->
+  <section class="blk">
+    <div class="secnum">AUDIENCE &nbsp;&middot;&nbsp; SECTION 03</div>
+    <h2 class="sec">The cadence <em>of the motion</em></h2>
+    <p class="sub">One conversation a month becomes a month of premium content across every channel. The entry rhythm is three posts a week on leaders' profiles and one on the company page, stepping up to five and three at the top tier. Consistent and premium, never noise.</p>
+    <figure>
+      <div class="fig figscroll">
+        <svg viewBox="0 0 900 360" role="img" aria-label="The monthly content cadence">
+          <g class="svgmuted" font-size="11">
+            <text x="230" y="30" text-anchor="middle">Week 1</text>
+            <text x="410" y="30" text-anchor="middle">Week 2</text>
+            <text x="590" y="30" text-anchor="middle">Week 3</text>
+            <text x="770" y="30" text-anchor="middle">Week 4</text>
+          </g>
+          <line x1="150" y1="40" x2="860" y2="40" stroke="var(--line)" stroke-width="1"/>
+          <text x="10" y="70" class="svglabel" font-size="11">Interview</text>
+          <rect x="150" y="56" width="160" height="24" rx="5" fill="var(--barcanopy)"/><text x="230" y="73" text-anchor="middle" font-size="10" fill="#0A0A0C" style="font-weight:700">Filmed once</text>
+          <text x="10" y="116" class="svglabel" font-size="11">Personal posts</text>
+          <rect x="330" y="102" width="66" height="22" rx="5" fill="var(--barblue)"/><rect x="410" y="102" width="66" height="22" rx="5" fill="var(--barblue)"/><rect x="490" y="102" width="66" height="22" rx="5" fill="var(--barblue)"/>
+          <rect x="570" y="102" width="66" height="22" rx="5" fill="var(--barblue)"/><rect x="650" y="102" width="66" height="22" rx="5" fill="var(--barblue)"/><rect x="730" y="102" width="66" height="22" rx="5" fill="var(--barblue)"/>
+          <rect x="810" y="102" width="46" height="22" rx="5" fill="var(--barblue)"/>
+          <text x="10" y="160" class="svglabel" font-size="11">Company posts</text>
+          <rect x="360" y="146" width="70" height="22" rx="5" fill="var(--barcanopy)"/><rect x="640" y="146" width="70" height="22" rx="5" fill="var(--barcanopy)"/>
+          <text x="10" y="204" class="svglabel" font-size="11">Video / clips</text>
+          <rect x="470" y="190" width="70" height="22" rx="5" fill="var(--barclay)"/><rect x="700" y="190" width="70" height="22" rx="5" fill="var(--barclay)"/>
+          <text x="10" y="248" class="svglabel" font-size="11">Newsletter / blog</text>
+          <rect x="740" y="234" width="116" height="22" rx="5" fill="none" stroke="var(--barterra)" stroke-width="1.5"/><text x="798" y="249" text-anchor="middle" font-size="9" class="svglabel">Monthly</text>
+          <text x="10" y="292" class="svglabel" font-size="11">Report</text>
+          <rect x="330" y="278" width="526" height="22" rx="5" fill="none" stroke="var(--barmoss)" stroke-width="1.5"/><text x="593" y="293" text-anchor="middle" font-size="10" class="svglabel">Community management ongoing, month-end read</text>
+          <text x="150" y="335" class="svgmuted" font-size="10">Entry rhythm shown: 3 personal + 1 company post per week. Top tier runs 5 personal + 3 company.</text>
+        </svg>
+      </div>
+      <figcaption>A single one-hour interview yields eight to twelve usable post angles, plus the long video, the clips, the newsletter and the blog. Combined with portfolio milestones and provided photography, the full cadence is sustainable with nothing created by United Growth beyond the interview.</figcaption>
+    </figure>
+
+    <h3 class="sub">The weekly <em>pillar mix</em></h3>
+    <p class="body">Each week balances the pillars so the feed teaches, proves and humanizes rather than just announcing, across both the leaders' profiles and the company page. A representative week leads with three angles:</p>
+    <div class="grid3">
+      <div class="card tl"><div class="chhead"><span class="ctitle">Post 1</span></div><p class="body" style="margin-top:0">Insight or market read. Teaches or takes a position. The Market, or How It Works.</p></div>
+      <div class="card tb"><div class="chhead"><span class="ctitle">Post 2</span></div><p class="body" style="margin-top:0">Proof or place. A center, a milestone, a community story. Portfolio in Motion, or Community &amp; Place.</p></div>
+      <div class="card tm"><div class="chhead"><span class="ctitle">Post 3</span></div><p class="body" style="margin-top:0">People or presence. The team, the firm, an event. The Firm, or Where We Are.</p></div>
+    </div>
+  </section>
+
+  <!-- REACH OVER TIME -->
+  <section class="blk">
+    <div class="secnum">AUDIENCE &nbsp;&middot;&nbsp; SECTION 04</div>
+    <h2 class="sec">Familiarity <em>compounds</em></h2>
+    <p class="sub">Organic is a compounding asset, not a campaign. The first weeks build the foundation; reach and recognition accelerate as consistency, engagement quality and amplification stack. The right read in the early months is momentum, follower growth, profile discovery and engaged companies, not a lead count.</p>
+    <figure>
+      <div class="fig figscroll">
+        <svg viewBox="0 0 900 320" role="img" aria-label="Familiarity compounds over time">
+          <line x1="70" y1="30" x2="70" y2="270" stroke="var(--line)" stroke-width="1.5"/>
+          <line x1="70" y1="270" x2="860" y2="270" stroke="var(--line)" stroke-width="1.5"/>
+          <text x="34" y="150" class="svgmuted" transform="rotate(-90 34 150)">Familiarity &amp; reach</text>
+          <g class="svgmuted" font-size="10">
+            <text x="130" y="290">Month 1</text><text x="270" y="290">Month 2</text><text x="410" y="290">Month 3</text><text x="550" y="290">Month 4</text><text x="690" y="290">Month 5</text><text x="820" y="290">Month 6</text>
+          </g>
+          <path d="M130 258 C270 250 340 235 410 210 C480 185 520 150 620 110 C700 80 780 58 850 48" fill="none" stroke="var(--barcanopy)" stroke-width="3"/>
+          <circle cx="130" cy="258" r="6" fill="var(--barcanopy)" stroke="var(--ink)" stroke-width="1.5"/>
+          <text x="145" y="250" class="svglabel" font-size="11" style="fill:var(--canopy-text);font-weight:700">You are here</text>
+          <text x="150" y="235" class="svgmuted" font-size="10">Foundation set</text>
+          <line x1="410" y1="60" x2="410" y2="270" stroke="var(--line)" stroke-width="1" stroke-dasharray="4 4"/>
+          <text x="418" y="72" class="svgmuted" font-size="10">First quarterly read</text>
+        </svg>
+      </div>
+      <figcaption>Illustrative shape, not a forecast. The pattern is consistent across organic thought-leadership programs: slow to start, then compounding. Real examples in the knowledge base show follower and profile-view growth accelerating once a consistent rhythm is in place.</figcaption>
+    </figure>
+  </section>
+</section>
+
+<!-- ================= MESSAGING ================= -->
+<section class="view" id="messaging">
+  <section class="blk">
+    <div class="kicker">Messaging &amp; Offer Architecture &nbsp;&middot;&nbsp; Voice, pillars, and the line we do not cross</div>
+    <h1 class="big">Familiarity, <em>not solicitation</em></h1>
+    <p class="lede">Everything published should feel like it came from a forty-year operator with a genuine point of view, not a fund trying to raise. Below: the voice, the six content pillars, the familiarity ladder that replaces a funnel, the guardrails, and the raw material United Growth provides. The ways to work together are on Paths Forward.</p>
+    <div class="pull">A premium brand is recognized by <b>how little it needs to say.</b></div>
+  </section>
+<!-- 1. THE VOICE -->
+  <section class="blk">
+    <div class="secnum">SECTION 01</div>
+    <h2 class="sec">The voice, <em>before the calendar</em></h2>
+    <p class="sub">Everything published should feel like it came from a forty-year operator with nothing to prove and a genuine point of view, not from a fund trying to raise.</p>
+
+    <h3 class="sub">What the presence is built to <em>feel like</em></h3>
+    <div class="grid2">
+      <div class="card tl"><div class="chhead"><span class="ctitle">Premium and understated</span></div><p class="body" style="margin-top:0">Authority through insight and restraint, not volume or claims.</p></div>
+      <div class="card tl"><div class="chhead"><span class="ctitle">Familiarity, not solicitation</span></div><p class="body" style="margin-top:0">Success is that the right people know the firm. No post asks for anything.</p></div>
+      <div class="card tl"><div class="chhead"><span class="ctitle">Show the work, do not sell it</span></div><p class="body" style="margin-top:0">Real centers, real thinking, real people. The proof is in the substance.</p></div>
+      <div class="card tl"><div class="chhead"><span class="ctitle">Consistency over volume</span></div><p class="body" style="margin-top:0">Two to three considered posts a week reads as more premium than five hurried ones.</p></div>
+    </div>
+
+    <div class="grid2" style="margin-top:15px">
+      <div class="card tc">
+        <h4>Move away from</h4>
+        <div class="role">Category language and anything promotional</div>
+        <ul class="clean">
+          <li>Necessity-based and recession-resilient as an opening line.</li>
+          <li>Grocery-anchored as the whole identity. It undersells the development side.</li>
+          <li>Institutional quality for individuals, stable income. Everyone says both.</li>
+          <li>Returns figures, performance language, or any invitation to invest.</li>
+        </ul>
+      </div>
+      <div class="card tl">
+        <h4>Own</h4>
+        <div class="role">True, and no rival can credibly copy it</div>
+        <ul class="clean">
+          <li>Create the asset, do not just buy it: develop and source, not auction-buy.</li>
+          <li>Off-market sourcing as the visible edge: more than half of deals, by relationship.</li>
+          <li>Community impact as durable value, a point of view, not a slogan.</li>
+          <li>Forty years and seventy-nine investments of quiet proof.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="k">The test for every post</div>
+      <p>Could a competitor publish the same thing and have it be equally true? If yes, it is table stakes, not United Growth's voice. And separately: would a reader feel sold to? If yes, it does not run.</p>
+    </div>
+  </section>
+  <!-- 2. CONTENT PILLARS -->
+  <section class="blk">
+    <div class="secnum">SECTION 02</div>
+    <h2 class="sec">The content <em>pillars</em></h2>
+    <p class="sub">Six pillars organize everything the page publishes. They map to the buckets we discussed, and each has a reliable, recurring source of material, which is how a premium cadence stays sustainable without United Growth creating anything.</p>
+
+    <div class="card tl"><div class="chhead"><span class="clabel" style="color:var(--canopy-text)">PILLAR 01</span><span class="ctitle">Portfolio in Motion</span></div><p class="body" style="margin-top:0">Acquisitions, dispositions and milestones; updates on existing centers and past transactions.</p><div class="pillhead">Serves</div><div class="tags"><span class="tag">Brokers</span><span class="tag">Investors</span><span class="tag">Tenants</span></div><div class="ev"><b>Signals:</b> momentum and credibility, a firm that is active and executing.</div><div class="ev"><b>Source:</b> milestones as they happen, plus provided photography.</div></div>
+
+    <div class="card tb"><div class="chhead"><span class="clabel" style="color:var(--blue-text)">PILLAR 02</span><span class="ctitle">The Firm and Its People</span></div><p class="body" style="margin-top:0">The team, the leadership, how United Growth thinks and works, the occasional perspective from the chief executive.</p><div class="pillhead">Serves</div><div class="tags"><span class="tag">All audiences</span></div><div class="ev"><b>Signals:</b> trust, the people and judgment behind the name.</div><div class="ev"><b>Source:</b> monthly interview, team context and bios.</div></div>
+
+    <div class="card tt"><div class="chhead"><span class="clabel" style="color:var(--terra-text)">PILLAR 03</span><span class="ctitle">How Necessity Retail Works</span></div><p class="body" style="margin-top:0">Plain-language education on necessity retail, net lease, development and private real estate investing.</p><div class="pillhead">Serves</div><div class="tags"><span class="tag">Investors</span><span class="tag">Tenants</span><span class="tag">Partners</span></div><div class="ev"><b>Signals:</b> expertise, teaching before selling.</div><div class="ev"><b>Source:</b> monthly interview, drafted by Impactable.</div></div>
+
+    <div class="card tc"><div class="chhead"><span class="clabel" style="color:var(--clay-text)">PILLAR 04</span><span class="ctitle">The Market, Read Plainly</span></div><p class="body" style="margin-top:0">Grounded commentary on what is happening in retail real estate and why it matters.</p><div class="pillhead">Serves</div><div class="tags"><span class="tag">Brokers</span><span class="tag">Investors</span><span class="tag">Peers</span></div><div class="ev"><b>Signals:</b> a point of view, a firm worth listening to.</div><div class="ev"><b>Source:</b> Impactable drafts from public data, checked in the interview.</div></div>
+
+    <div class="card tm"><div class="chhead"><span class="clabel" style="color:var(--moss-text)">PILLAR 05</span><span class="ctitle">Community and Place</span></div><p class="body" style="margin-top:0">The thesis that centers which matter to their neighborhoods hold value, and the stories behind specific places.</p><div class="pillhead">Serves</div><div class="tags"><span class="tag">All audiences</span><span class="tag">Partners</span></div><div class="ev"><b>Signals:</b> values and differentiation, the ground no rival owns.</div><div class="ev"><b>Source:</b> interview and provided community stories.</div></div>
+
+    <div class="card tb"><div class="chhead"><span class="clabel" style="color:var(--blue-text)">PILLAR 06</span><span class="ctitle">Where We Are</span></div><p class="body" style="margin-top:0">Presence at events and conferences such as ICSC, and polished repurposing of existing photos and footage.</p><div class="pillhead">Serves</div><div class="tags"><span class="tag">Brokers</span><span class="tag">Partners</span></div><div class="ev"><b>Signals:</b> presence, a firm that is in the room and in the market.</div><div class="ev"><b>Source:</b> provided footage and event notes, edited by Impactable.</div></div>
+
+    <div class="callout" style="border-left-color:var(--moss)">
+      <div class="k mossk">Will there be enough material?</div>
+      <p>Yes, comfortably. A single one-hour interview typically yields eight to twelve usable post angles. Combined with portfolio milestones as they happen, the photography and footage United Growth already has, and market commentary Impactable drafts from public data, a two to four post per week cadence is sustainable without United Growth writing or filming anything. The pillars are designed so no single month leans on one source.</p>
+    </div>
+  </section>
+
+  <!-- 4. FAMILIARITY LADDER -->
+  <section class="blk">
+    <div class="secnum">SECTION 04</div>
+    <h2 class="sec">The familiarity <em>ladder</em></h2>
+    <p class="sub">A private firm that does not want to solicit does not run a funnel with a call to action at the bottom. It builds familiarity in stages and lets interest arrive on its own. The measure at every stage is recognition and trust, never a captured lead.</p>
+
+    <div class="card tl"><div class="chhead"><span class="ordchip">1</span><span class="ctitle">Discover</span></div><p class="body" style="margin-top:6px">Encounters United Growth in the feed and recognizes a firm with a point of view. The Market and Community pillars catch the eye without asking for anything.</p></div>
+    <div class="card tb"><div class="chhead"><span class="ordchip">2</span><span class="ctitle">Understand</span></div><p class="body" style="margin-top:6px">Learns what United Growth actually does, and how it is different. Portfolio in Motion and How It Works make the model plain.</p></div>
+    <div class="card tm"><div class="chhead"><span class="ordchip">3</span><span class="ctitle">Trust</span></div><p class="body" style="margin-top:6px">Sees the people, the record and the values, and starts to regard the firm as credible. The Firm, Community and Place, and Where We Are build confidence.</p></div>
+    <div class="card tc"><div class="chhead"><span class="ordchip">4</span><span class="ctitle">Reach out, on their own terms</span></div><p class="body" style="margin-top:6px">Chooses to visit the site or make contact, unprompted. No push. Familiarity and credibility do the work.</p></div>
+
+    <div class="callout">
+      <div class="k">The only call to action</div>
+      <p>At most, a quiet learn more at unitedgrowth.com. No lead forms, no invitations to invest, no urgency. The site visit is a natural next step, not an ask.</p>
+    </div>
+  </section>
+
+  <!-- 5. ASSETS -->
+  <section class="blk">
+    <div class="secnum">SECTION 05</div>
+    <h2 class="sec">The raw material <em>United Growth provides</em></h2>
+    <p class="sub">What Impactable turns into content. Most of it already exists; the interview supplies the rest. Nothing here asks United Growth to create finished posts.</p>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>Asset</th><th>Have it?</th><th>How it is used</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Property photography</td><td>Existing</td><td>Polished portfolio and community posts.</td></tr>
+        <tr><td class="k">Existing video footage</td><td>Existing</td><td>Edited into occasional video posts, a separate variation from the interviews.</td></tr>
+        <tr><td class="k">Transaction and portfolio data</td><td>Existing</td><td>Portfolio in Motion milestones and credibility posts.</td></tr>
+        <tr><td class="k">Past-deal and community stories</td><td>Existing / interview</td><td>The substance behind Community and Place.</td></tr>
+        <tr><td class="k">Team and leadership context</td><td>Existing / interview</td><td>The Firm and Its People.</td></tr>
+        <tr><td class="k">Firm expertise and perspective</td><td>Interview</td><td>How It Works, The Market, and the point of view across the page.</td></tr>
+        <tr><td class="k">Event and conference plans</td><td>As they arise</td><td>Where We Are, with no hard call to action.</td></tr>
+      </tbody>
+    </table></div>
+  </section>
+
+  <!-- 6. GUARDRAILS -->
+  <section class="blk">
+    <div class="secnum">SECTION 06</div>
+    <h2 class="sec">The <em>guardrails</em></h2>
+    <p class="sub">Because United Growth is a private firm that does not want to appear to solicit, a few rules hold on every post.</p>
+    <div class="grid2">
+      <div class="card tm">
+        <h4>Always</h4>
+        <ul class="clean">
+          <li>Lead with substance, insight or a real place.</li>
+          <li>Keep the tone measured, premium and confident.</li>
+          <li>Let the record and the work speak.</li>
+          <li>Offer a soft learn-more at most.</li>
+          <li>Publish on a consistent, unhurried rhythm.</li>
+        </ul>
+      </div>
+      <div class="card th">
+        <h4>Never</h4>
+        <ul class="clean">
+          <li>Ask for investment or imply an offering.</li>
+          <li>Publish returns figures or performance claims.</li>
+          <li>Use urgency, hype or promotional language.</li>
+          <li>Run lead forms or hard calls to action.</li>
+          <li>Post simply to fill a calendar.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="k">A note on posture</div>
+      <p>A brand-first, non-solicitous presence is not only the more premium choice, it also sits comfortably with the care a private fund understandably takes in how it communicates publicly. Building familiarity and authority, rather than advertising an offering, keeps the page firmly on the right side of that line while still doing real work for the firm.</p>
+    </div>
+  </section>
+
+  </section>
+
+<!-- ================= ECOSYSTEM ================= -->
+<section class="view" id="ecosystem">
+  <section class="blk">
+    <div class="kicker">The System &nbsp;&middot;&nbsp; The content engine on one screen</div>
+    <h1 class="big">The whole motion, <em>and where it grows</em></h1>
+    <p class="lede">The organic content engine seen as a system: what starts now, what gets built as the presence finds its rhythm, and where it could extend later. Everything here is forward-looking. The badges show sequence, not a grade.</p>
+    <div class="tags" style="margin-top:14px">
+      <span class="badge bstart">START</span><span class="pill">Live from month one</span>
+      <span class="badge bbuild">BUILD</span><span class="pill">Added as the presence matures</span>
+      <span class="badge blater">LATER</span><span class="pill">Future expansion, only when United Growth chooses</span>
+    </div>
+  </section>
+
+  <section class="blk">
+    <div class="secnum">ECOSYSTEM &nbsp;&middot;&nbsp; THE GROWTH SYSTEM BOARD</div>
+    <h2 class="sec">Five stages, <em>one engine</em></h2>
+    <p class="sub">Create the substance, distribute it, connect with the people it reaches, convert familiarity into contact on their terms, and compound the whole thing over time.</p>
+    <div class="gsboard">
+      <div class="gscol">
+        <h5 style="color:var(--canopy-text)">Create</h5>
+        <div class="cd">Make the substance</div>
+        <div class="motion"><div class="mt">Monthly expert interview</div><div class="mb"><span class="badge bstart">START</span><span class="owner">IMP + UG</span></div></div>
+        <div class="motion"><div class="mt">Long-form video + short clips</div><div class="mb"><span class="badge bstart">START</span><span class="owner">IMP</span></div></div>
+        <div class="motion"><div class="mt">Newsletter + monthly blog</div><div class="mb"><span class="badge bstart">START</span><span class="owner">IMP</span></div></div>
+        <div class="motion"><div class="mt">Rotating expert voices</div><div class="mb"><span class="badge bbuild">BUILD</span><span class="owner">UG</span></div></div>
+      </div>
+      <div class="gscol">
+        <h5 style="color:var(--terra-text)">Distribute</h5>
+        <div class="cd">Get it seen</div>
+        <div class="motion"><div class="mt">Personal + company posting</div><div class="mb"><span class="badge bstart">START</span><span class="owner">IMP</span></div></div>
+        <div class="motion"><div class="mt">YouTube, newsletter, blog</div><div class="mb"><span class="badge bstart">START</span><span class="owner">IMP</span></div></div>
+        <div class="motion"><div class="mt">Warm LinkedIn retargeting</div><div class="mb"><span class="badge bstart">START</span><span class="owner">IMP</span></div></div>
+        <div class="motion"><div class="mt">Team &amp; partner amplification</div><div class="mb"><span class="badge bbuild">BUILD</span><span class="owner">UG</span></div></div>
+      </div>
+      <div class="gscol">
+        <h5 style="color:var(--blue-text)">Connect</h5>
+        <div class="cd">Build the relationship</div>
+        <div class="motion"><div class="mt">Community management</div><div class="mb"><span class="badge bstart">START</span><span class="owner">IMP</span></div></div>
+        <div class="motion"><div class="mt">Engagement with the ecosystem</div><div class="mb"><span class="badge bstart">START</span><span class="owner">IMP</span></div></div>
+        <div class="motion"><div class="mt">Follower invites from the team</div><div class="mb"><span class="badge bbuild">BUILD</span><span class="owner">UG</span></div></div>
+      </div>
+      <div class="gscol">
+        <h5 style="color:var(--moss-text)">Convert</h5>
+        <div class="cd">On their terms</div>
+        <div class="motion"><div class="mt">Soft learn-more to the site</div><div class="mb"><span class="badge bstart">START</span><span class="owner">IMP</span></div></div>
+        <div class="motion"><div class="mt">Named accounts surfaced (DemandSense)</div><div class="mb"><span class="badge bbuild">BUILD</span><span class="owner">IMP</span></div></div>
+        <div class="motion"><div class="mt">Website Visitor ID on the site</div><div class="mb"><span class="badge blater">LATER</span><span class="owner">IMP</span></div></div>
+      </div>
+      <div class="gscol">
+        <h5 style="color:var(--clay-text)">Compound</h5>
+        <div class="cd">Improve and grow</div>
+        <div class="motion"><div class="mt">Monthly report &amp; read</div><div class="mb"><span class="badge bstart">START</span><span class="owner">IMP</span></div></div>
+        <div class="motion"><div class="mt">SEO + answer-engine footprint</div><div class="mb"><span class="badge bstart">START</span><span class="owner">IMP</span></div></div>
+        <div class="motion"><div class="mt">Who is engaging, by company</div><div class="mb"><span class="badge bbuild">BUILD</span><span class="owner">IMP</span></div></div>
+        <div class="motion"><div class="mt">Full connected demand system</div><div class="mb"><span class="badge blater">LATER</span><span class="owner">IMP</span></div></div>
+      </div>
+    </div>
+    <p class="body" style="margin-top:18px"><span class="mono" style="font-size:11px;color:var(--muted)">IMP = Impactable &nbsp; UG = United Growth</span></p>
+
+    <div class="callout">
+      <div class="k">Where it starts</div>
+      <p>Everything marked START is live in month one and is the whole of the recommended entry: the interview, the full content set across LinkedIn, YouTube, newsletter and blog, warm retargeting of that content, publishing and management, and the monthly report. BUILD items come as the presence matures. LATER items, a full connected demand system, are a separate conversation for when United Growth chooses.</p>
+    </div>
+  </section>
+</section>
+
+<!-- ================= HOW IT WORKS ================= -->
+<section class="view" id="howitworks">
+  <section class="blk">
+    <div class="kicker">How It Works &nbsp;&middot;&nbsp; One interview, a month of content, everywhere</div>
+    <h1 class="big">Your expertise, <em>turned into an engine</em></h1>
+    <p class="lede">This is not a content service that writes posts from nothing. We build United Growth a brand brain: a governed store of the firm's real expertise, voice and positioning, and produce sharp, on-brand assets from it across LinkedIn, YouTube, newsletter and blog. One conversation a month becomes a month of premium content, and every cycle makes the next one sharper.</p>
+  </section>
+
+  <!-- BRAND BRAIN -->
+  <section class="blk">
+    <div class="secnum">HOW IT WORKS &nbsp;&middot;&nbsp; SECTION 01</div>
+    <h2 class="sec">The brand <em>brain</em></h2>
+    <p class="sub">Real expertise goes in. A governed knowledge base holds the firm's voice, positioning and proof. Sharp, on-brand assets come out, everywhere buyers look. It is what keeps a fifteen-person firm sounding like one confident voice across every channel.</p>
+    <figure>
+      <div class="fig figscroll">
+        <svg viewBox="0 0 900 340" role="img" aria-label="The brand brain: inputs to outputs">
+          <!-- inputs -->
+          <text x="20" y="40" class="svglabel" font-size="12" style="font-weight:700">Inputs</text>
+          <g class="svgmuted" font-size="10.5">
+            <rect x="20" y="55" width="200" height="34" rx="7" fill="none" stroke="var(--muted)" stroke-width="1.2"/><text x="120" y="76" text-anchor="middle">Founder &amp; expert interviews</text>
+            <rect x="20" y="98" width="200" height="34" rx="7" fill="none" stroke="var(--muted)" stroke-width="1.2"/><text x="120" y="119" text-anchor="middle">Positioning &amp; white space</text>
+            <rect x="20" y="141" width="200" height="34" rx="7" fill="none" stroke="var(--muted)" stroke-width="1.2"/><text x="120" y="162" text-anchor="middle">Proof, portfolio &amp; audience</text>
+            <rect x="20" y="184" width="200" height="34" rx="7" fill="none" stroke="var(--muted)" stroke-width="1.2"/><text x="120" y="205" text-anchor="middle">How the firm talks &amp; thinks</text>
+          </g>
+          <!-- brain -->
+          <rect x="330" y="95" width="230" height="130" rx="16" fill="var(--barcanopy)" opacity="0.10"/>
+          <rect x="330" y="95" width="230" height="130" rx="16" fill="none" stroke="var(--barcanopy)" stroke-width="2.5"/>
+          <text x="445" y="150" text-anchor="middle" class="svglabel" font-size="16" style="fill:var(--canopy-text);font-weight:700">BRAND BRAIN</text>
+          <text x="445" y="172" text-anchor="middle" class="svgmuted" font-size="10">governed &middot; current &middot; yours</text>
+          <text x="445" y="192" text-anchor="middle" class="svgmuted" font-size="10">five foundational documents</text>
+          <!-- arrows in -->
+          <g stroke="var(--muted)" stroke-width="1.3" fill="var(--muted)">
+            <line x1="222" y1="72" x2="326" y2="130"/><line x1="222" y1="115" x2="326" y2="145"/><line x1="222" y1="158" x2="326" y2="165"/><line x1="222" y1="201" x2="326" y2="185"/>
+            <polygon points="326,130 318,129 322,137"/>
+          </g>
+          <!-- outputs -->
+          <text x="680" y="40" class="svglabel" font-size="12" style="font-weight:700">Outputs</text>
+          <g class="svgmuted" font-size="10.5">
+            <rect x="670" y="55" width="210" height="30" rx="7" fill="none" stroke="var(--barblue)" stroke-width="1.4"/><text x="775" y="74" text-anchor="middle">LinkedIn posts, personal &amp; company</text>
+            <rect x="670" y="93" width="210" height="30" rx="7" fill="none" stroke="var(--barblue)" stroke-width="1.4"/><text x="775" y="112" text-anchor="middle">Long-form video &amp; short clips</text>
+            <rect x="670" y="131" width="210" height="30" rx="7" fill="none" stroke="var(--barblue)" stroke-width="1.4"/><text x="775" y="150" text-anchor="middle">Newsletter editions</text>
+            <rect x="670" y="169" width="210" height="30" rx="7" fill="none" stroke="var(--barblue)" stroke-width="1.4"/><text x="775" y="188" text-anchor="middle">Blog &amp; long-form articles</text>
+          </g>
+          <g stroke="var(--barblue)" stroke-width="1.5" fill="var(--barblue)">
+            <line x1="560" y1="140" x2="666" y2="70"/><line x1="560" y1="150" x2="666" y2="108"/><line x1="560" y1="165" x2="666" y2="146"/><line x1="560" y1="180" x2="666" y2="184"/>
+            <polygon points="666,70 658,70 662,78"/>
+          </g>
+          <text x="445" y="255" text-anchor="middle" class="svgmuted" font-size="10">Every asset governed by the same documents, so the voice stays consistent as the firm grows.</text>
+        </svg>
+      </div>
+      <figcaption>Three of the five foundational documents already exist in this room: the White Space, the Audience map, and the Messaging architecture. The brain is partly built before the engagement even begins.</figcaption>
+    </figure>
+    <div class="grid3">
+      <div class="card tl"><div class="chhead"><span class="ctitle">Real interviews</span></div><p class="body" style="margin-top:0">We sit down with the firm's leaders and experts and capture the real thinking. That is the raw material nothing else can replicate.</p></div>
+      <div class="card tl"><div class="chhead"><span class="ctitle">Humans in the loop</span></div><p class="body" style="margin-top:0">Editorial guardrails and a review pass on every asset. Nothing ships that does not sound like United Growth.</p></div>
+      <div class="card tl"><div class="chhead"><span class="ctitle">A compounding library</span></div><p class="body" style="margin-top:0">Every month the library grows. Inputs get lighter, the voice gets sharper, and past work keeps paying off.</p></div>
+    </div>
+  </section>
+
+  <!-- CONTENT MULTIPLICATION -->
+  <section class="blk">
+    <div class="secnum">HOW IT WORKS &nbsp;&middot;&nbsp; SECTION 02</div>
+    <h2 class="sec">One interview, <em>many assets</em></h2>
+    <p class="sub">This is the answer to the question of where enough material comes from. A single monthly interview is filmed once and turned into a full month of content across every channel. At the recommended entry, one conversation produces this:</p>
+    <figure>
+      <div class="fig figscroll">
+        <svg viewBox="0 0 900 360" role="img" aria-label="How one interview multiplies into a month of assets">
+          <rect x="20" y="150" width="150" height="66" rx="10" fill="var(--barcanopy)"/>
+          <text x="95" y="180" text-anchor="middle" font-size="13" fill="#0A0A0C" style="font-weight:700">1 interview</text>
+          <text x="95" y="199" text-anchor="middle" font-size="10" fill="#0A0A0C">filmed once, monthly</text>
+          <g stroke="var(--barcanopy)" stroke-width="2" fill="none">
+            <path d="M170 175 C240 90 300 70 380 66"/>
+            <path d="M170 180 C240 130 300 120 380 118"/>
+            <path d="M170 185 C250 180 300 172 380 170"/>
+            <path d="M170 190 C250 215 300 222 380 224"/>
+            <path d="M170 200 C240 275 300 285 380 288"/>
+          </g>
+          <g>
+            <rect x="380" y="48" width="240" height="36" rx="8" fill="none" stroke="var(--barblue)" stroke-width="1.5"/><text x="392" y="71" class="svglabel" font-size="12">1 long-form video (YouTube)</text>
+            <rect x="380" y="100" width="240" height="36" rx="8" fill="none" stroke="var(--barblue)" stroke-width="1.5"/><text x="392" y="123" class="svglabel" font-size="12">8 short clips (YouTube + LinkedIn)</text>
+            <rect x="380" y="152" width="240" height="36" rx="8" fill="none" stroke="var(--barblue)" stroke-width="1.5"/><text x="392" y="175" class="svglabel" font-size="12">LinkedIn posts, personal + company</text>
+            <rect x="380" y="204" width="240" height="36" rx="8" fill="none" stroke="var(--barblue)" stroke-width="1.5"/><text x="392" y="227" class="svglabel" font-size="12">1 newsletter edition</text>
+            <rect x="380" y="270" width="240" height="36" rx="8" fill="none" stroke="var(--barblue)" stroke-width="1.5"/><text x="392" y="293" class="svglabel" font-size="12">1 monthly blog article</text>
+          </g>
+          <text x="660" y="120" class="svglabel" font-size="12" style="fill:var(--canopy-text);font-weight:700">The transcript</text>
+          <text x="660" y="140" class="svgmuted" font-size="10.5">becomes the copy for</text>
+          <text x="660" y="156" class="svgmuted" font-size="10.5">every written asset:</text>
+          <text x="660" y="178" class="svgmuted" font-size="10.5">posts, newsletter,</text>
+          <text x="660" y="194" class="svgmuted" font-size="10.5">blog and video scripts.</text>
+          <text x="660" y="226" class="svgmuted" font-size="10.5">Filmed once. Published</text>
+          <text x="660" y="242" class="svgmuted" font-size="10.5">all month, everywhere.</text>
+        </svg>
+      </div>
+      <figcaption>The entry engagement. Higher tiers multiply this: two or three interviews a month become two or three long videos, sixteen to twenty-four clips, and two to three newsletters and blogs. See Paths Forward for the full output by tier.</figcaption>
+    </figure>
+  </section>
+
+  <!-- THE MONTHLY CYCLE -->
+  <section class="blk">
+    <div class="secnum">HOW IT WORKS &nbsp;&middot;&nbsp; SECTION 03</div>
+    <h2 class="sec">The monthly <em>cycle</em></h2>
+    <p class="sub">Once live, every month feeds the next. The firm's only recurring commitment is the interview and quick approvals. Everything else is Impactable.</p>
+    <div class="card tl"><div class="chhead"><span class="ordchip">1</span><span class="ctitle">Inputs</span><span class="ctags">United Growth shows up</span></div><p class="body" style="margin-top:6px">One monthly interview, or two to three shorter ones at higher tiers. We come prepared with questions; the team simply talks. Notes or a short prompt work too.</p></div>
+    <div class="card tt"><div class="chhead"><span class="ordchip">2</span><span class="ctitle">Produce</span><span class="ctags">Impactable</span></div><p class="body" style="margin-top:6px">The interview is edited into video and clips, and the transcript becomes the copy for posts, newsletter and blog, all governed by the brand brain.</p></div>
+    <div class="card tc"><div class="chhead"><span class="ordchip">3</span><span class="ctitle">Review</span><span class="ctags">United Growth</span></div><p class="body" style="margin-top:6px">A full month of assets, reviewed and approved in a simple queue. Light, fast, fully in the firm's control.</p></div>
+    <div class="card tb"><div class="chhead"><span class="ordchip">4</span><span class="ctitle">Publish</span><span class="ctags">Impactable</span></div><p class="body" style="margin-top:6px">Scheduled and published across the firm's and leaders' profiles, the company page, YouTube, newsletter and blog, on a consistent rhythm.</p></div>
+    <div class="card tm"><div class="chhead"><span class="ordchip">5</span><span class="ctitle">Signal</span><span class="ctags">Impactable</span></div><p class="body" style="margin-top:6px">A monthly read on reach, engagement, follower growth, the strongest content, and which companies and roles are paying attention. That sharpens the next cycle.</p></div>
+    <div class="pull">Inputs get lighter, the voice gets sharper, the library grows. <b>The engine compounds.</b></div>
+  </section>
+
+  <!-- WHAT IT POWERS + DISTRIBUTION -->
+  <section class="blk">
+    <div class="secnum">HOW IT WORKS &nbsp;&middot;&nbsp; SECTION 04</div>
+    <h2 class="sec">Smart <em>distribution</em></h2>
+    <p class="sub">The same expertise, expressed everywhere buyers and partners look, and, on the amplified tiers, guaranteed in front of the right warm accounts. LinkedIn is the entry point where messaging is tested; the winners travel to every other channel.</p>
+    <div class="grid2">
+      <div class="card tl"><div class="chhead"><span class="clabel" style="color:var(--canopy-text)">ORGANIC</span><span class="ctitle">Personal + company on LinkedIn</span></div><p class="body" style="margin-top:0">Leaders' profiles carry the trust; the company page carries the brand. Both are fed from the same interviews. Personal posts are drafted and approved for each leader, so the lift on them is minimal.</p></div>
+      <div class="card tl"><div class="chhead"><span class="clabel" style="color:var(--canopy-text)">ORGANIC</span><span class="ctitle">YouTube, newsletter &amp; blog</span></div><p class="body" style="margin-top:0">The long-form video lives on YouTube, the transcript becomes a newsletter edition and a blog article. Depth for the audiences that want it, and a footprint that lasts.</p></div>
+      <div class="card tt"><div class="chhead"><span class="clabel" style="color:var(--terra-text)">OPTIONAL, TIERS 1 &amp; 2</span><span class="ctitle">Warm retargeting, not solicitation</span></div><p class="body" style="margin-top:0">A light LinkedIn retargeting layer boosts the firm's own content, text, spotlight and follower formats, to people who already engaged, filtered to the right fit. It guarantees the best content reaches warm, qualified accounts. It is content distribution, never an investment pitch.</p></div>
+      <div class="card tt"><div class="chhead"><span class="clabel" style="color:var(--terra-text)">OPTIONAL, TIER 2</span><span class="ctitle">Named-account intelligence</span></div><p class="body" style="margin-top:0">With retargeting running, LinkedIn Company Hub and DemandSense surface the exact companies and roles engaging, a warm, named list the firm can recognize and act on. DemandSense is Impactable's own software.</p></div>
+    </div>
+
+    <h3 class="sub">Why <em>amplification</em> matters</h3>
+    <p class="body">A company page published alone reaches only a small share of its followers, so the engine is built to compound: strong content, personal voices, and, where chosen, a light paid boost. Figures are LinkedIn platform benchmarks from Impactable's Algorithm Insights analysis.</p>
+    <div class="grid3">
+      <div class="datastat"><div class="n">+168%</div><div class="l">More impressions when a post is shared by a person rather than the page alone.</div><div class="s">Algorithm Insights</div></div>
+      <div class="datastat"><div class="n">4.3x</div><div class="l">More engagement on posts reshared or originated by team members.</div><div class="s">Algorithm Insights</div></div>
+      <div class="datastat"><div class="n">3.8x</div><div class="l">Higher exposure across the full ecosystem versus the page alone.</div><div class="s">Algorithm Insights</div></div>
+    </div>
+  </section>
+
+  <!-- SEO / AEO -->
+  <section class="blk">
+    <div class="secnum">HOW IT WORKS &nbsp;&middot;&nbsp; SECTION 05</div>
+    <h2 class="sec">Read by search, <em>and by AI</em></h2>
+    <p class="sub">The reason high output is worth it at the top tier. LinkedIn, YouTube and a real blog are all indexed by search engines and increasingly read by AI answer engines. The more substantive content the firm publishes, the more often United Growth surfaces when someone, or something, looks it up.</p>
+    <div class="grid3">
+      <div class="card tm"><div class="chhead"><span class="ctitle">Search visibility (SEO)</span></div><p class="body" style="margin-top:0">Blog articles and long-form build the firm's own searchable footprint, so the name shows up for the topics it should own.</p></div>
+      <div class="card tm"><div class="chhead"><span class="ctitle">Answer-engine visibility (AEO)</span></div><p class="body" style="margin-top:0">AI assistants increasingly read LinkedIn and published content when they answer questions. A consistent, expert footprint is how a firm gets cited rather than skipped.</p></div>
+      <div class="card tm"><div class="chhead"><span class="ctitle">Compounding, not disposable</span></div><p class="body" style="margin-top:0">Unlike a paid impression that vanishes, an article or video keeps working for years. Output at the top tier is an investment in a lasting, findable presence.</p></div>
+    </div>
+    <div class="callout blue">
+      <div class="k">Why the top tier is pure organic</div>
+      <p>The highest tier trades the paid layer for maximum content output and the search and answer-engine reach that comes with it. For a firm that wants to be found and trusted rather than to advertise, that is often the most durable use of the budget.</p>
+    </div>
+  </section>
+
+  <!-- REPORTING -->
+  <section class="blk">
+    <div class="secnum">HOW IT WORKS &nbsp;&middot;&nbsp; SECTION 06</div>
+    <h2 class="sec">What we report, <em>and what we do not promise</em></h2>
+    <p class="sub">A trust layer is a compounding asset. The early read is momentum, not a lead count.</p>
+    <div class="scroll"><table class="tbl">
+      <thead><tr><th>We report</th><th>The honest boundary</th></tr></thead>
+      <tbody>
+        <tr><td class="k">Reach and impressions, page, profiles and ecosystem</td><td>Organic reach is modest by platform design; the number that matters is the trend.</td></tr>
+        <tr><td class="k">Follower and profile-view growth</td><td>A leading indicator of familiarity, not a pipeline figure.</td></tr>
+        <tr><td class="k">Engagement and the strongest content</td><td>Tells us what resonates, so the next month sharpens.</td></tr>
+        <tr><td class="k">Which companies and roles are engaging</td><td>Company Hub visibility on every tier; named-account detail via DemandSense on the amplified tiers.</td></tr>
+      </tbody>
+    </table></div>
+    <div class="callout">
+      <div class="k">What we do not promise</div>
+      <p>No leads or closed business from content alone in the first quarter, and no investor solicitation of any kind. This is a familiarity and credibility engine. It makes every later conversation easier; it does not replace the firm's own relationships and outreach.</p>
+    </div>
+  </section>
+</section>
+
+<!-- ================= PATHS FORWARD ================= -->
+<section class="view" id="paths">
+  <section class="blk">
+    <div class="kicker">Paths Forward &nbsp;&middot;&nbsp; Where we fit, and the ways to work together</div>
+    <h1 class="big">Three ways <em>to begin</em></h1>
+    <p class="lede">A quiet, premium presence is exactly the kind of work this engine is built for. Here is where Impactable fits, the three levels of output to choose from, and two proof points from firms that built authority the same way.</p>
+  </section>
+
+  <!-- FIT -->
+  <section class="blk">
+    <div class="secnum">PATHS FORWARD &nbsp;&middot;&nbsp; SECTION 01</div>
+    <h2 class="sec">Where Impactable <em>fits</em></h2>
+    <p class="sub">This engagement plays to what we do best, and to what United Growth needs right now.</p>
+    <div class="grid2">
+      <div class="card tl"><div class="chhead"><span class="ctitle">A firm rich in substance, quiet online</span></div><p class="body" style="margin-top:0">Forty years, seventy-nine investments, a genuine point of view, and almost no digital footprint. That gap is the easiest kind to close well, and the interview engine turns existing expertise into content without the team creating anything.</p></div>
+      <div class="card tl"><div class="chhead"><span class="ctitle">A premium, non-solicitous voice</span></div><p class="body" style="margin-top:0">Building familiarity and authority rather than advertising an offering is our default mode for firms that must communicate carefully. It is also the more premium choice.</p></div>
+      <div class="card tl"><div class="chhead"><span class="ctitle">Everything owned by us</span></div><p class="body" style="margin-top:0">Strategy, brainstorming, writing, publishing and reporting sit with Impactable. A fifteen-person firm with no marketing team can run a national-quality presence on one conversation a month.</p></div>
+      <div class="card tl"><div class="chhead"><span class="ctitle">Start small, grow when ready</span></div><p class="body" style="margin-top:0">The recommended start is deliberately lean and sustainable. It earns its way up as the presence finds its rhythm, rather than committing the firm to more than it wants on day one.</p></div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="blk">
+    <div class="secnum">PATHS FORWARD &nbsp;&middot;&nbsp; SECTION 02</div>
+    <h2 class="sec">Three ways <em>to work together</em></h2>
+    <p class="sub">The same engine, at three levels of output. The recommended start is the first: a complete monthly engine at the entry fee. Each step up multiplies the content, the reach, and the intelligence.</p>
+    <div class="scroll"><table class="pm">
+      <thead><tr>
+        <th class="rowlbl"></th>
+        <th class="rec"><span class="recpill2">Recommended start</span><div class="ohead rec2">The Engine</div><div class="price">$2,500</div><div class="per">per month</div></th>
+        <th><div class="ohead">The Amplified Engine</div><div class="price">$4,250</div><div class="per">per month</div></th>
+        <th><div class="ohead">The Authority Engine</div><div class="price">$5,750</div><div class="per">per month</div></th>
+      </tr></thead>
+      <tbody>
+        <tr><td class="rowlbl">Monthly interviews</td><td class="rectint">1</td><td>2</td><td>Up to 3 (or 3 rotating experts)</td></tr>
+        <tr><td class="rowlbl">Long-form videos (YouTube)</td><td class="rectint">1</td><td>2</td><td>3</td></tr>
+        <tr><td class="rowlbl">Short clips (YouTube + LinkedIn)</td><td class="rectint">8</td><td>16</td><td>24</td></tr>
+        <tr><td class="rowlbl">LinkedIn newsletters</td><td class="rectint">1</td><td>2 (personal + company)</td><td>3 (mix)</td></tr>
+        <tr><td class="rowlbl">Blog articles</td><td class="rectint">1</td><td>2</td><td>3</td></tr>
+        <tr><td class="rowlbl">Posting cadence</td><td class="rectint">3 personal + 1 company / wk</td><td>4 personal + 2 company / wk</td><td>5 personal + 3 company / wk</td></tr>
+        <tr><td class="rowlbl">LinkedIn ads (retargeting only)</td><td class="rectint"><span class="ck">&#10003;</span> up to $5k/mo spend</td><td><span class="ck">&#10003;</span> ICP-filtered warm boosting</td><td><span class="cx">&mdash;</span> pure organic</td></tr>
+        <tr><td class="rowlbl">Named-account intelligence</td><td class="rectint">Company Hub visibility</td><td><span class="ck">Company Hub + DemandSense</span></td><td>Company Hub visibility</td></tr>
+        <tr><td class="rowlbl">SEO / AEO footprint</td><td class="rectint">Growing</td><td>Growing</td><td><span class="ck">Maximized</span></td></tr>
+        <tr><td class="rowlbl">Company-page management</td><td class="rectint"><span class="ck">&#10003;</span></td><td><span class="ck">&#10003;</span></td><td><span class="ck">&#10003;</span></td></tr>
+        <tr><td class="rowlbl">Monthly report</td><td class="rectint"><span class="ck">&#10003;</span></td><td><span class="ck">&#10003;</span></td><td><span class="ck">&#10003;</span></td></tr>
+        <tr><td class="rowlbl">Management fee</td><td class="rectint">$2,500 / mo</td><td>$4,250 / mo</td><td>$5,750 / mo</td></tr>
+        <tr><td class="rowlbl">Ad spend</td><td class="rectint">Separate, up to $5k / mo</td><td>Separate, up to $5k / mo</td><td>None</td></tr>
+        <tr><td class="rowlbl">Why it fits</td><td class="rectint">A complete engine, with warm distribution built in</td><td>Double the output, guaranteed warm reach, named accounts</td><td>Maximum organic footprint and search + AI visibility</td></tr>
+      </tbody>
+    </table></div>
+    <div class="freebar">On pricing: management fees are flat and monthly, and separate from ad spend. Each tier adds a one-time $1,500 setup that builds the brand brain and the foundational documents, on a ninety-day discovery horizon. On the first two tiers, LinkedIn ad spend is the firm's own budget, capped at $5,000 a month, and used only to retarget the firm's own content to warm, qualified audiences, never for solicitation. The top tier is pure organic and trades the paid layer for the highest content output and search and answer-engine reach.</div>
+  </section>
+
+  <!-- PROOF -->
+  <section class="blk">
+    <div class="secnum">PATHS FORWARD &nbsp;&middot;&nbsp; SECTION 03</div>
+    <h2 class="sec">Proof, <em>matched to this</em></h2>
+    <p class="sub">Two firms that built authority the same way United Growth would: expertise turned into consistent content across channels.</p>
+    <div class="grid2">
+      <div class="card tb">
+        <div class="chhead"><span class="ctitle">Curious Cat</span><span class="ctags">organic thought-leadership motion</span></div>
+        <p class="body" style="margin-top:0">A steady organic thought-leadership program lifted profile views by 63 percent, with follower and connection growth compounding alongside, exactly the momentum metrics an early organic read is judged on.</p>
+        <div class="why"><b>Why this one for you:</b> it is the shape of United Growth's first two quarters, recognition and discovery building before any harder measure.</div>
+      </div>
+      <div class="card tb">
+        <div class="chhead"><span class="ctitle">HeyReach</span><span class="ctags">expertise-led content, founder on camera</span></div>
+        <p class="body" style="margin-top:0">Putting real expertise into consistent content drove a step-change in the organic base, followers and post impressions climbing sharply as the audience found the substance and stayed with it.</p>
+        <div class="why"><b>Why this one for you:</b> proof that genuine, expertise-led content earns a real following, even in a specialized field where the audience is particular.</div>
+      </div>
+    </div>
+    <p class="body">More at <a href="https://impactable-case-studies.vercel.app/" target="_blank" rel="noopener">the full case-study library</a>.</p>
+  </section>
+
+  <!-- CTA -->
+  <section class="blk">
+    <div class="ctablock dark-panel">
+      <h2>When it's useful, <em>let's talk it through.</em></h2>
+      <p>No pitch. A short call to answer questions, match the right cadence to what United Growth wants to publish, and confirm the details. Whenever the timing is right.</p>
+      <div class="btnrow"><a class="btn primary" href="https://landbot.online/v3/H-2201411-ZNNL8EM9RF7C2XAC/index.html" target="_blank" rel="noopener">Book a call</a></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <section class="blk foot">
+    <div class="fb">Impactable &middot; LinkedIn Company-Page Strategy &middot; United Growth</div>
+    <div class="note">Built from public sources for internal review. Scope is a thought-leadership content engine across personal and company LinkedIn, YouTube, newsletter and blog. On the first two tiers a warm LinkedIn retargeting layer boosts the firm's own content to qualified audiences and is content distribution, not solicitation; the top tier is pure organic. Management fees ($2,500, $4,250, $5,750 per month) are flat and separate from ad spend, with a one-time setup and a ninety-day discovery horizon. Distribution figures are LinkedIn platform benchmarks from Impactable's Algorithm Insights analysis, indicative and not a forecast. DemandSense and Website Visitor ID are Impactable's own software. <details style="margin-top:10px"><summary><span class="chip">+</span><span class="verb">Show </span>full notes and limitations</summary><div class="dbody">Audience and reach are earned organically and cannot be guaranteed. Estimates and benchmarks vary by source. Nothing here constitutes an offer of securities or investment solicitation. Competitor and market figures are drawn from public materials as of August 2026.</div></details></div>
+  </section>
+</section>
+
+</div>
+
+<script>
+(function(){
+  var root=document.documentElement, tbtn=document.getElementById('themeBtn');
+  var saved=null; try{saved=localStorage.getItem('imp_theme');}catch(e){}
+  if(saved){root.setAttribute('data-theme',saved);}
+  function icon(){tbtn.textContent = root.getAttribute('data-theme')==='light' ? '\u2600' : '\u263E';}
+  icon();
+  tbtn.addEventListener('click',function(){
+    var t=root.getAttribute('data-theme')==='light'?'dark':'light';
+    root.setAttribute('data-theme',t);
+    try{localStorage.setItem('imp_theme',t);}catch(e){}
+    icon();
+  });
+  var views=['overview','whitespace','targeting','messaging','ecosystem','howitworks','paths'];
+  function show(v){
+    if(views.indexOf(v)===-1){v='overview';}
+    document.querySelectorAll('.view').forEach(function(s){s.classList.toggle('active',s.id===v);});
+    document.querySelectorAll('.tab').forEach(function(t){t.classList.toggle('active',t.dataset.v===v);});
+    window.scrollTo({top:0,behavior:'smooth'});
+  }
+  document.querySelectorAll('.tab').forEach(function(t){t.addEventListener('click',function(){var v=t.dataset.v;show(v);history.replaceState(null,'','#'+v);});});
+  document.querySelectorAll('[data-goto]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var v=a.dataset.goto;show(v);history.replaceState(null,'','#'+v);});});
+  window.addEventListener('hashchange',function(){show((location.hash||'#overview').slice(1));});
+  var initial=(location.hash||'#overview').slice(1);
+  show(views.indexOf(initial)===-1?'overview':initial);
+})();
+</script>
+</body>
+</html>
